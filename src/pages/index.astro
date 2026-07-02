@@ -1,5 +1,8 @@
 ---
 // One-page portfolio. Static, no client-side JS.
+import "@fontsource-variable/source-serif-4";
+import "@fontsource-variable/inter";
+
 const title = "Yuliia — AI tools & GTM engineering";
 const description =
   "A Ukrainian immigrant who taught herself to build AI tools that help people get through hard systems — starting with her own community.";
@@ -41,10 +44,21 @@ const description =
             job boards, scores every posting against a candidate profile, and
             uses Claude to tailor a one-page resume and cover letter — then a
             human reviews and approves every application before anything is
-            sent. 3,700+ jobs discovered, 77 tailored application packets, ~57
-            passing tests. Built with Python, SQL, Claude API.
+            sent. 6,800+ postings discovered, 89 tailored application packets,
+            73 passing tests. Built with Python, SQL, Claude API.
           </p>
           <a class="project-link" href="https://github.com/AiYulia/mrapply-demo">View project</a>
+        </article>
+
+        <article class="build">
+          <h3>lead-scoring-ml</h3>
+          <p>
+            A small, honest machine-learning study: on realistic funnel data,
+            transparent logistic regression beats gradient boosting (ROC-AUC
+            0.770 vs 0.741) — and can explain every score it gives. Documented
+            synthetic dataset, reproducible end to end. scikit-learn, pandas.
+          </p>
+          <a class="project-link" href="https://github.com/AiYulia/lead-scoring-ml">View project</a>
         </article>
 
         <article class="build">
@@ -68,6 +82,11 @@ const description =
         Power BI · Ukrainian / Russian (native)
       </p>
 
+      <p class="credentials">
+        B.S. Business Analytics (minor Finance) · SIE (FINRA) · Bloomberg
+        Market Concepts · Microsoft Excel Associate
+      </p>
+
       <footer class="contact">
         <a href="https://www.linkedin.com/in/erdyv-yuliia">LinkedIn</a>
         <a href="https://github.com/AiYulia">GitHub</a>
@@ -78,21 +97,23 @@ const description =
 
 <style>
   :root {
-    --accent: #2563eb;
-    --text: #1c1c1e;
-    --muted: #5c5c61;
-    --rule: #e4e4e7;
-    --bg: #ffffff;
+    --bg: #f0eee6;
+    --card: #faf9f5;
+    --text: #1f1e1d;
+    --muted: #6b6a61;
+    --rule: #e3ded2;
+    --accent: #c15f3c;
     color-scheme: light dark;
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --accent: #7ca6ff;
-      --text: #e8e8ea;
-      --muted: #a0a0a8;
-      --rule: #2e2e33;
-      --bg: #131316;
+      --bg: #1a1915;
+      --card: #211f1a;
+      --text: #edeae3;
+      --muted: #a39f93;
+      --rule: #33312b;
+      --accent: #e08d63;
     }
   }
 
@@ -106,18 +127,17 @@ const description =
   }
 
   body {
-    font-family:
-      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    font-family: "Inter Variable", -apple-system, "Segoe UI", Helvetica, Arial,
       sans-serif;
     color: var(--text);
-    line-height: 1.6;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
 
   main {
-    max-width: 40rem;
+    max-width: 44rem;
     margin: 0 auto;
-    padding: 5rem 1.5rem 4rem;
+    padding: 6rem 1.5rem 5rem;
     animation: fade-in 0.6s ease-out both;
   }
 
@@ -139,48 +159,59 @@ const description =
   }
 
   .hero {
-    margin-bottom: 3.5rem;
+    margin-bottom: 4.5rem;
   }
 
   h1 {
-    font-size: 2.25rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    margin-bottom: 1rem;
+    font-family: "Source Serif 4 Variable", Georgia, "Times New Roman", serif;
+    font-size: 3rem;
+    font-weight: 550;
+    letter-spacing: -0.015em;
+    margin-bottom: 1.25rem;
   }
 
   .tagline {
-    font-size: 1.15rem;
-    max-width: 36rem;
+    font-family: "Source Serif 4 Variable", Georgia, serif;
+    font-size: 1.3rem;
+    font-weight: 420;
+    line-height: 1.5;
+    max-width: 40rem;
   }
 
   .subline {
-    margin-top: 0.75rem;
+    margin-top: 1rem;
     color: var(--muted);
+    font-size: 1rem;
   }
 
   h2 {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.12em;
     color: var(--accent);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
   }
 
   .build {
-    margin-bottom: 2.25rem;
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.25rem;
   }
 
   h3 {
-    font-size: 1.1rem;
-    font-weight: 650;
-    margin-bottom: 0.4rem;
+    font-family: "Source Serif 4 Variable", Georgia, serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
   }
 
   .build p {
     color: var(--muted);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.97rem;
   }
 
   a {
@@ -194,30 +225,43 @@ const description =
     text-underline-offset: 3px;
   }
 
+  .project-link {
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+
   .project-link::after {
     content: " \2192";
   }
 
   .impact {
     border-top: 1px solid var(--rule);
-    margin-top: 3rem;
-    padding-top: 1.5rem;
-    font-size: 0.95rem;
+    margin-top: 3.5rem;
+    padding-top: 1.75rem;
+    font-family: "Source Serif 4 Variable", Georgia, serif;
+    font-size: 1.05rem;
   }
 
   .skills {
-    margin-top: 1.25rem;
-    font-size: 0.9rem;
+    margin-top: 1.5rem;
+    font-size: 0.92rem;
+    color: var(--muted);
+  }
+
+  .credentials {
+    margin-top: 0.6rem;
+    font-size: 0.92rem;
     color: var(--muted);
   }
 
   .contact {
     border-top: 1px solid var(--rule);
-    margin-top: 3rem;
-    padding-top: 1.5rem;
+    margin-top: 3.5rem;
+    padding-top: 1.75rem;
     display: flex;
-    gap: 1.75rem;
-    font-size: 0.95rem;
+    gap: 2rem;
+    font-size: 0.97rem;
+    font-weight: 500;
   }
 
   @media (max-width: 480px) {
@@ -225,10 +269,13 @@ const description =
       padding-top: 3.5rem;
     }
     h1 {
-      font-size: 1.85rem;
+      font-size: 2.3rem;
     }
     .tagline {
-      font-size: 1.05rem;
+      font-size: 1.12rem;
+    }
+    .build {
+      padding: 1.25rem 1.25rem;
     }
   }
 </style>
