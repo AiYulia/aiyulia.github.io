@@ -22,6 +22,13 @@ const description =
     <title>{title}</title>
   </head>
   <body>
+    <nav aria-label="Sections">
+      <a href="#builds">Builds</a>
+      <a href="#experience">Experience</a>
+      <a href="#research">Research</a>
+      <a href="/resume.pdf">Resume</a>
+      <a href="#contact">Contact</a>
+    </nav>
     <main>
       <header class="hero">
         <h1>Yuliia</h1>
@@ -32,9 +39,13 @@ const description =
         <p class="subline">
           Open to AI-enabled GTM engineering, RevOps, and applied-AI roles.
         </p>
+        <p class="hero-actions">
+          <a class="button" href="/resume.pdf">Resume (PDF)</a>
+          <a class="button ghost" href="https://github.com/AiYulia">GitHub</a>
+        </p>
       </header>
 
-      <section aria-labelledby="builds-heading">
+      <section id="builds" aria-labelledby="builds-heading">
         <h2 id="builds-heading">Featured builds</h2>
 
         <article class="build">
@@ -70,6 +81,86 @@ const description =
           </p>
           <a class="project-link" href="https://github.com/AiYulia/speech-coach">View project</a>
         </article>
+
+        <p class="meta-build">
+          This site is a build too — Astro, fully static, no trackers, no keys.&nbsp;
+          <a href="https://github.com/AiYulia/aiyulia.github.io">Source on GitHub</a>
+        </p>
+      </section>
+
+      <section id="experience" aria-labelledby="experience-heading">
+        <h2 id="experience-heading">Experience</h2>
+
+        <article class="role">
+          <div class="role-head">
+            <h3>J.P. Morgan — Global Private Bank</h3>
+            <span class="when">Summer 2024</span>
+          </div>
+          <p class="role-title">Summer Analyst, Global Families Group</p>
+          <p>
+            Worked a $7B portfolio across 35 ultra-high-net-worth clients:
+            optimized asset-allocation models, built an automated data-flow
+            system aggregating a client's $1B+ multi-bank portfolio (replacing
+            manual processing), and co-delivered an outreach project that
+            lifted monthly client acquisition 20%.
+          </p>
+        </article>
+
+        <article class="role">
+          <div class="role-head">
+            <h3>Student Managed Investment Fund</h3>
+            <span class="when">2024 – 2025</span>
+          </div>
+          <p class="role-title">Senior Analyst</p>
+          <p>
+            Two investment proposals approved by the Advisory Board on the
+            strength of Monte Carlo simulation and DCF modeling.
+          </p>
+        </article>
+
+        <article class="role">
+          <div class="role-head">
+            <h3>Business Analytics Department (university research)</h3>
+            <span class="when">2022 – 2023</span>
+          </div>
+          <p class="role-title">Research Assistant</p>
+          <p>
+            Early-access GPT-4 research on financial-market sentiment:
+            formulated and tested hypotheses on integrating stock-news
+            sentiment into technical analysis; co-authored a
+            department-supported paper showing a 5% forecast-accuracy gain
+            over traditional NLP models.
+          </p>
+        </article>
+
+        <article class="role">
+          <div class="role-head">
+            <h3>County Cleaners Corporation</h3>
+            <span class="when">2022</span>
+          </div>
+          <p class="role-title">Financial Analyst</p>
+          <p>
+            Interactive Tableau dashboard on real-time sales + SQL budget
+            modeling that surfaced inefficiencies and cut costs 3%.
+          </p>
+        </article>
+      </section>
+
+      <section id="research" aria-labelledby="research-heading">
+        <h2 id="research-heading">Research &amp; education</h2>
+        <p>
+          Co-authored NLP research (with an early-access GPT-4 grant) showing
+          large language models outperform traditional sentiment tools on
+          financial forecasting — a +5% accuracy gain, and the starting point
+          of everything on this page.
+        </p>
+        <p>
+          B.S. Business Analytics, minor in Finance — GPA 4.0 (major) / 3.95
+          (cumulative), Honors College with Distinction, full-ride scholarship.
+        </p>
+        <p class="credentials">
+          SIE (FINRA) · Bloomberg Market Concepts · Microsoft Excel Associate
+        </p>
       </section>
 
       <p class="impact">
@@ -82,14 +173,10 @@ const description =
         Power BI · Ukrainian / Russian (native)
       </p>
 
-      <p class="credentials">
-        B.S. Business Analytics (minor Finance) · SIE (FINRA) · Bloomberg
-        Market Concepts · Microsoft Excel Associate
-      </p>
-
-      <footer class="contact">
+      <footer class="contact" id="contact">
         <a href="https://www.linkedin.com/in/erdyv-yuliia">LinkedIn</a>
         <a href="https://github.com/AiYulia">GitHub</a>
+        <a href="/resume.pdf">Resume</a>
       </footer>
     </main>
   </body>
@@ -124,6 +211,7 @@ const description =
 
   html {
     background: var(--bg);
+    scroll-behavior: smooth;
   }
 
   body {
@@ -134,10 +222,29 @@ const description =
     -webkit-font-smoothing: antialiased;
   }
 
+  nav {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 1.5rem 1.5rem 0;
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  nav a {
+    color: var(--muted);
+  }
+
+  nav a:hover,
+  nav a:focus-visible {
+    color: var(--accent);
+  }
+
   main {
     max-width: 44rem;
     margin: 0 auto;
-    padding: 6rem 1.5rem 5rem;
+    padding: 4.5rem 1.5rem 5rem;
     animation: fade-in 0.6s ease-out both;
   }
 
@@ -155,6 +262,9 @@ const description =
   @media (prefers-reduced-motion: reduce) {
     main {
       animation: none;
+    }
+    html {
+      scroll-behavior: auto;
     }
   }
 
@@ -182,6 +292,38 @@ const description =
     margin-top: 1rem;
     color: var(--muted);
     font-size: 1rem;
+  }
+
+  .hero-actions {
+    margin-top: 1.75rem;
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .button {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--bg);
+    font-weight: 550;
+    font-size: 0.95rem;
+    padding: 0.55rem 1.1rem;
+    border-radius: 8px;
+  }
+
+  .button:hover,
+  .button:focus-visible {
+    text-decoration: none;
+    filter: brightness(1.07);
+  }
+
+  .button.ghost {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--rule);
+  }
+
+  section {
+    margin-bottom: 4rem;
   }
 
   h2 {
@@ -214,6 +356,56 @@ const description =
     font-size: 0.97rem;
   }
 
+  .meta-build {
+    margin-top: 1.25rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+
+  .role {
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .role:last-of-type {
+    border-bottom: none;
+  }
+
+  .role-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+  }
+
+  .role h3 {
+    font-size: 1.12rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .when {
+    color: var(--muted);
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  .role-title {
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+  }
+
+  .role p:last-child {
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  #research p {
+    margin-bottom: 0.9rem;
+    max-width: 40rem;
+  }
+
   a {
     color: var(--accent);
     text-decoration: none;
@@ -236,7 +428,7 @@ const description =
 
   .impact {
     border-top: 1px solid var(--rule);
-    margin-top: 3.5rem;
+    margin-top: 0;
     padding-top: 1.75rem;
     font-family: "Source Serif 4 Variable", Georgia, serif;
     font-size: 1.05rem;
@@ -249,7 +441,6 @@ const description =
   }
 
   .credentials {
-    margin-top: 0.6rem;
     font-size: 0.92rem;
     color: var(--muted);
   }
@@ -266,7 +457,7 @@ const description =
 
   @media (max-width: 480px) {
     main {
-      padding-top: 3.5rem;
+      padding-top: 3rem;
     }
     h1 {
       font-size: 2.3rem;
@@ -276,6 +467,15 @@ const description =
     }
     .build {
       padding: 1.25rem 1.25rem;
+    }
+    nav {
+      gap: 1rem;
+      font-size: 0.85rem;
+      flex-wrap: wrap;
+    }
+    .role-head {
+      flex-direction: column;
+      gap: 0;
     }
   }
 </style>
