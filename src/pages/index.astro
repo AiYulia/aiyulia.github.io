@@ -50,15 +50,42 @@ const description =
         <h2 id="builds-heading">Featured builds</h2>
 
         <article class="build">
-          <h3>mrapply</h3>
+          <h3>immigration-doc-explainer</h3>
           <p>
-            A human-in-the-loop job-application machine. It watches ~55 company
-            job boards, scores every posting against a candidate profile, and
-            uses Claude to tailor a one-page resume and cover letter — then a
-            human reviews and approves every application before anything is
-            sent. 6,800+ postings discovered, 89 tailored application packets,
-            73 passing tests. Built with Python, SQL, Claude API.
+            A Claude-powered tool that explains a USCIS work-permit form
+            (I-765) in plain English and Ukrainian — what the form is, what
+            your eligibility category means, the fee, what happens next, and
+            the mistakes that get forms rejected. Built from public form
+            information and synthetic examples only, with a hard
+            "explain, don't advise" design. Python + Claude API; the demo runs
+            with no API key.
           </p>
+          <a class="project-link" href="https://github.com/AiYulia/immigration-doc-explainer">View project</a>
+        </article>
+
+        <article class="build">
+          <h3>apartment-hunt</h3>
+          <p>
+            A rental-vetting research dashboard that ranks listings on true
+            effective rent (after concessions) and runs a review-forensics
+            pass that flags gamed ratings instead of trusting them — every
+            verdict shown with its reasoning. Used on 160+ real listings
+            across a real relocation search. HTML/CSS/JS + Leaflet,
+            fully data-driven.
+          </p>
+          <a class="project-link" href="https://github.com/AiYulia/apartment-hunt">View project</a>
+        </article>
+
+        <article class="build">
+          <h3>market-research-engine</h3>
+          <p>
+            A multi-source equity-research system: macro (FRED), fundamentals
+            (SEC/EDGAR), options (Polygon), and crowd signal (Reddit), scored
+            through a market-regime model into dashboards a human can act on.
+            Wired through MCP servers and direct API clients; runs on a real
+            122-name watchlist with a synthetic sample book. Python + pytest.
+          </p>
+          <a class="project-link" href="https://github.com/AiYulia/market-research-engine">View project</a>
         </article>
 
         <article class="build">
@@ -75,10 +102,12 @@ const description =
         <article class="build">
           <h3>speech-coach</h3>
           <p>
-            An AI speech-coaching tool for English learners: structured
-            practice sessions, instant feedback, progress tracking. Built to
-            make daily deliberate practice actually happen. Python + Claude.
+            An AI speech-coaching CLI for English learners with a
+            Ukrainian/Russian background: structured daily practice sessions,
+            drills, and progress tracking. Built to make deliberate practice
+            actually happen. Python; 16 passing tests.
           </p>
+          <a class="project-link" href="https://github.com/AiYulia/speech-coach">View project</a>
         </article>
 
         <p class="meta-build">
@@ -92,28 +121,35 @@ const description =
 
         <article class="role">
           <div class="role-head">
-            <h3>J.P. Morgan — Global Private Bank</h3>
-            <span class="when">Summer 2024</span>
+            <h3>JG Wentworth</h3>
+            <span class="when">Jan – Jun 2026</span>
           </div>
-          <p class="role-title">Summer Analyst, Global Families Group</p>
+          <p class="role-title">Applied AI &amp; Data Science Co-op</p>
           <p>
-            Worked a $7B portfolio across 35 ultra-high-net-worth clients:
-            optimized asset-allocation models, built an automated data-flow
-            system aggregating a client's $1B+ multi-bank portfolio (replacing
-            manual processing), and co-delivered an outreach project that
-            lifted monthly client acquisition 20%.
+            Built a Python pipeline (hands-on with Claude + Snowflake MCP)
+            unpacking speaker-tagged call transcripts into Snowflake;
+            engineered semantic and sentiment scoring with Snowflake Cortex
+            AISQL; proved call-derived features carried cancellation-risk
+            signal and contributed them into the team's LightGBM model
+            (AUC +0.02); owned the compliance layer (TCPA/DNC calling rules,
+            CFPB-oriented QA), keeping scoring uniform across agents.
           </p>
         </article>
 
         <article class="role">
           <div class="role-head">
-            <h3>Student Managed Investment Fund</h3>
-            <span class="when">2024 – 2025</span>
+            <h3>J.P. Morgan — U.S. Private Bank</h3>
+            <span class="when">Summer 2024</span>
           </div>
-          <p class="role-title">Senior Analyst</p>
+          <p class="role-title">Summer Analyst, Asset &amp; Wealth Management</p>
           <p>
-            Two investment proposals approved by the Advisory Board on the
-            strength of Monte Carlo simulation and DCF modeling.
+            Built an automated portfolio data-flow tool over J.P. Morgan's
+            internal portfolio data for a client's $1B+ portfolio — replacing
+            hours of manual re-entry with a minutes-long refresh the banker
+            team kept using; ran Monte Carlo simulations across a book of 35
+            ultra-high-net-worth clients ($7B); contributed analysis to a
+            $35M investment proposal presented by the senior team, supporting
+            a +20% rise in monthly client acquisition.
           </p>
         </article>
 
@@ -124,23 +160,11 @@ const description =
           </div>
           <p class="role-title">Research Assistant</p>
           <p>
-            Early-access GPT-4 research on financial-market sentiment:
-            formulated and tested hypotheses on integrating stock-news
-            sentiment into technical analysis; co-authored a
-            department-supported paper showing a 5% forecast-accuracy gain
-            over traditional NLP models.
-          </p>
-        </article>
-
-        <article class="role">
-          <div class="role-head">
-            <h3>County Cleaners Corporation</h3>
-            <span class="when">2022</span>
-          </div>
-          <p class="role-title">Financial Analyst</p>
-          <p>
-            Interactive Tableau dashboard on real-time sales + SQL budget
-            modeling that surfaced inefficiencies and cut costs 3%.
+            Early-access GPT-4 research on financial-market sentiment: built a
+            Python pipeline scoring stock-news sentiment with the GPT-4 API,
+            tested hypotheses with an LSTM forecasting model, and co-authored
+            a department-supported paper showing a ~5% forecast-accuracy gain
+            over traditional NLP baselines.
           </p>
         </article>
       </section>
@@ -154,11 +178,14 @@ const description =
           of everything on this page.
         </p>
         <p>
-          B.S. Business Analytics, minor in Finance — GPA 4.0 (major) / 3.95
-          (cumulative), Honors College with Distinction, full-ride scholarship.
+          BBA, Business Analytics (STEM), minor in Finance — GPA 4.0 (major) /
+          3.98 (cumulative), Honors College with Distinction, Presidential
+          Scholarship.
         </p>
         <p class="credentials">
-          SIE (FINRA) · Bloomberg Market Concepts · Microsoft Excel Associate
+          AI Fluency &amp; Claude 101 (Anthropic) · Oracle Certified Generative
+          AI Professional · SIE (FINRA) · Bloomberg Market Concepts ·
+          Microsoft Excel Associate
         </p>
       </section>
 
