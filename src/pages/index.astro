@@ -3,7 +3,7 @@
 import "@fontsource-variable/source-serif-4";
 import "@fontsource-variable/inter";
 
-const title = "Yuliia — AI tools & GTM engineering";
+const title = "Yuliia Erdyv — Applied AI & Data";
 const description =
   "A Ukrainian immigrant who taught herself to build AI tools that help people get through hard systems — starting with her own community.";
 ---
@@ -23,91 +23,179 @@ const description =
   </head>
   <body>
     <nav aria-label="Sections">
-      <a href="#builds">Builds</a>
+      <a href="#work">Work</a>
       <a href="#experience">Experience</a>
-      <a href="#research">Research</a>
+      <a href="#community">Community</a>
       <a href="/resume.pdf">Resume</a>
       <a href="#contact">Contact</a>
     </nav>
     <main>
       <header class="hero">
-        <h1>Yuliia</h1>
+        <p class="kicker">Charlotte, NC · Applied AI &amp; Data</p>
+        <h1>Yuliia Erdyv</h1>
         <p class="tagline">
           A Ukrainian immigrant who taught herself to build AI tools that help
           people get through hard systems — starting with her own community.
         </p>
         <p class="subline">
-          Open to AI-enabled GTM engineering, RevOps, and applied-AI roles.
+          Most recently: Applied AI &amp; Data Science co-op at JG Wentworth.
+          Open to applied-AI, data, and AI-for-good roles.
         </p>
         <p class="hero-actions">
-          <a class="button" href="/resume.pdf">Resume (PDF)</a>
+          <a class="button" href="#work">See the work</a>
+          <a class="button ghost" href="/resume.pdf">Resume (PDF)</a>
           <a class="button ghost" href="https://www.linkedin.com/in/erdyv-yuliia">LinkedIn</a>
           <a class="button ghost" href="https://github.com/AiYulia">GitHub</a>
         </p>
       </header>
 
-      <section id="builds" aria-labelledby="builds-heading">
-        <h2 id="builds-heading">Featured builds</h2>
+      <section class="about" aria-label="About">
+        <p>
+          I build practical, human-in-the-loop AI: tools that read messy
+          real-world information — rental listings, government forms, sales
+          calls — and hand people a clear decision with the reasoning attached.
+          Everything below is real, running, and documented. The methodology is
+          mine; the code is pair-built with Claude.
+        </p>
+      </section>
+
+      <section id="work" aria-labelledby="work-heading">
+        <h2 id="work-heading">Work</h2>
+
+        <article class="build featured">
+          <div class="build-head">
+            <h3>apartment-hunt</h3>
+            <span class="badge">Live demo</span>
+          </div>
+          <p class="problem">
+            Listings hide the real price, and gamed reviews bury the truth.
+          </p>
+          <p>
+            A rental-vetting dashboard that ranks 160+ real Charlotte-metro
+            listings on true effective rent after concessions, runs a
+            review-forensics pass that flags manipulated ratings instead of
+            trusting them, and resolves every listing to a clear verdict with
+            its reasoning shown. Three views: cards, interactive map, and a
+            sortable list.
+          </p>
+          <p class="tags">
+            <span>HTML / CSS / JS</span><span>Leaflet</span><span>review forensics</span><span>real data</span>
+          </p>
+          <p class="build-actions">
+            <a class="button" href="https://aiyulia.github.io/apartment-hunt/dashboard.html">Open the live dashboard</a>
+            <a class="button ghost" href="https://github.com/AiYulia/apartment-hunt">GitHub</a>
+          </p>
+        </article>
 
         <article class="build">
-          <h3>immigration-doc-explainer</h3>
+          <div class="build-head">
+            <h3>immigration-doc-explainer</h3>
+          </div>
+          <p class="problem">
+            Government forms are hard — harder in your second language.
+          </p>
           <p>
             A Claude-powered tool that explains a USCIS work-permit form
             (I-765) in plain English and Ukrainian — what the form is, what
             your eligibility category means, the fee, what happens next, and
             the mistakes that get forms rejected. Built from public form
             information and synthetic examples only, with a hard
-            "explain, don't advise" design. Python + Claude API; the demo runs
-            with no API key.
+            "explain, don't advise" design; the demo runs with no API key.
           </p>
-          <a class="project-link" href="https://github.com/AiYulia/immigration-doc-explainer">View project</a>
+          <p class="tags">
+            <span>Python</span><span>Claude API</span><span>bilingual EN / UK</span>
+          </p>
+          <p class="build-actions">
+            <a class="button ghost" href="https://github.com/AiYulia/immigration-doc-explainer">GitHub</a>
+          </p>
         </article>
 
         <article class="build">
-          <h3>apartment-hunt</h3>
-          <p>
-            A rental-vetting research dashboard that ranks listings on true
-            effective rent (after concessions) and runs a review-forensics
-            pass that flags gamed ratings instead of trusting them — every
-            verdict shown with its reasoning. Used on 160+ real listings
-            across a real relocation search. HTML/CSS/JS + Leaflet,
-            fully data-driven.
+          <div class="build-head">
+            <h3>directors-workbook</h3>
+            <span class="badge">Live demo</span>
+          </div>
+          <p class="problem">
+            Sales-team reviews drown in spreadsheets nobody reads.
           </p>
-          <a class="project-link" href="https://github.com/AiYulia/apartment-hunt">View project</a>
+          <p>
+            A public, fully synthetic recreation of a sales director's
+            team-review method: one Python script rolls invented reps and
+            deals up into a self-contained HTML workbook a director can
+            actually read — no employer data, no real schema, method only.
+          </p>
+          <p class="tags">
+            <span>Python</span><span>self-contained HTML</span><span>synthetic data</span>
+          </p>
+          <p class="build-actions">
+            <a class="button" href="https://aiyulia.github.io/directors-workbook/dashboard.html">Open the live workbook</a>
+            <a class="button ghost" href="https://github.com/AiYulia/directors-workbook">GitHub</a>
+          </p>
         </article>
 
         <article class="build">
-          <h3>market-research-engine</h3>
+          <div class="build-head">
+            <h3>market-research-engine</h3>
+          </div>
+          <p class="problem">
+            Equity research means juggling six sources that don't talk.
+          </p>
           <p>
-            A multi-source equity-research system: macro (FRED), fundamentals
+            A multi-source research system: macro (FRED), fundamentals
             (SEC/EDGAR), options (Polygon), and crowd signal (Reddit), scored
             through a market-regime model into dashboards a human can act on.
             Wired through MCP servers and direct API clients; runs on a real
-            122-name watchlist with a synthetic sample book. Python + pytest.
+            122-name watchlist with a synthetic sample book.
           </p>
-          <a class="project-link" href="https://github.com/AiYulia/market-research-engine">View project</a>
+          <p class="tags">
+            <span>Python</span><span>MCP</span><span>FRED · EDGAR · Polygon</span><span>pytest</span>
+          </p>
+          <p class="build-actions">
+            <a class="button ghost" href="https://github.com/AiYulia/market-research-engine">GitHub</a>
+          </p>
         </article>
 
         <article class="build">
-          <h3>lead-scoring-ml</h3>
+          <div class="build-head">
+            <h3>lead-scoring-ml</h3>
+          </div>
+          <p class="problem">
+            When does a transparent model beat a black box?
+          </p>
           <p>
             A small, honest machine-learning study: on realistic funnel data,
-            transparent logistic regression beats gradient boosting (ROC-AUC
-            0.770 vs 0.741) — and can explain every score it gives. Documented
-            synthetic dataset, reproducible end to end. scikit-learn, pandas.
+            logistic regression beats gradient boosting (ROC-AUC 0.770 vs
+            0.741) — and can explain every score it gives. Documented
+            synthetic dataset, 5-fold cross-validation, reproducible end to
+            end.
           </p>
-          <a class="project-link" href="https://github.com/AiYulia/lead-scoring-ml">View project</a>
+          <p class="tags">
+            <span>scikit-learn</span><span>pandas</span><span>5-fold CV</span>
+          </p>
+          <p class="build-actions">
+            <a class="button ghost" href="https://github.com/AiYulia/lead-scoring-ml">GitHub</a>
+          </p>
         </article>
 
         <article class="build">
-          <h3>speech-coach</h3>
+          <div class="build-head">
+            <h3>speech-coach</h3>
+          </div>
+          <p class="problem">
+            Deliberate practice only works if it actually happens.
+          </p>
           <p>
             An AI speech-coaching CLI for English learners with a
             Ukrainian/Russian background: structured daily practice sessions,
-            drills, and progress tracking. Built to make deliberate practice
-            actually happen. Python; 16 passing tests.
+            drills, and progress tracking with streaks. Python; 16 passing
+            tests.
           </p>
-          <a class="project-link" href="https://github.com/AiYulia/speech-coach">View project</a>
+          <p class="tags">
+            <span>Python</span><span>CLI</span><span>16 tests</span>
+          </p>
+          <p class="build-actions">
+            <a class="button ghost" href="https://github.com/AiYulia/speech-coach">GitHub</a>
+          </p>
         </article>
 
         <p class="meta-build">
@@ -126,13 +214,15 @@ const description =
           </div>
           <p class="role-title">Applied AI &amp; Data Science Co-op</p>
           <p>
-            Built a Python pipeline (hands-on with Claude + Snowflake MCP)
-            unpacking speaker-tagged call transcripts into Snowflake;
-            engineered semantic and sentiment scoring with Snowflake Cortex
-            AISQL; proved call-derived features carried cancellation-risk
-            signal and contributed them into the team's LightGBM model
-            (AUC +0.02); owned the compliance layer (TCPA/DNC calling rules,
-            CFPB-oriented QA), keeping scoring uniform across agents.
+            Secured Observe.AI Reporting-API access and built the Python
+            pipeline (hands-on with Claude + Snowflake MCP) that unpacked
+            speaker-tagged call transcripts into Snowflake; engineered
+            semantic and sentiment scoring with Snowflake Cortex AISQL;
+            proved the call-derived features carried cancellation-risk signal
+            and contributed them by pull request into the team's LightGBM
+            model, lifting AUC +0.02; owned the compliance layer — TCPA
+            calling windows, DNC rules, CFPB-oriented QA — keeping scoring
+            fair and uniform across agents.
           </p>
         </article>
 
@@ -144,60 +234,108 @@ const description =
           <p class="role-title">Summer Analyst, Asset &amp; Wealth Management</p>
           <p>
             Built an automated portfolio data-flow tool over J.P. Morgan's
-            internal portfolio data for a client's $1B+ portfolio — replacing
-            hours of manual re-entry with a minutes-long refresh the banker
-            team kept using; ran Monte Carlo simulations across a book of 35
-            ultra-high-net-worth clients ($7B); contributed analysis to a
-            $35M investment proposal presented by the senior team, supporting
-            a +20% rise in monthly client acquisition.
+            internal data for a client's $1B+ portfolio — hours of manual
+            re-entry became a minutes-long refresh the banker team kept using;
+            ran Monte Carlo simulations across a 35-client, $7B
+            ultra-high-net-worth book to pinpoint likely converters out of
+            cash-heavy portfolios and built the investor–client pitch decks;
+            built an Excel (Office Script) screening tool that turned the
+            client book into per-banker priority lists as rate cuts ended
+            5.3–5.6% cash yields.
           </p>
         </article>
 
         <article class="role">
           <div class="role-head">
-            <h3>Business Analytics Department (university research)</h3>
+            <h3>Hofstra University — Business Analytics Dept.</h3>
             <span class="when">2022 – 2023</span>
           </div>
-          <p class="role-title">Research Assistant</p>
+          <p class="role-title">Research Assistant to Dr. Hak Kim</p>
           <p>
-            Early-access GPT-4 research on financial-market sentiment: built a
-            Python pipeline scoring stock-news sentiment with the GPT-4 API,
-            tested hypotheses with an LSTM forecasting model, and co-authored
-            a department-supported paper showing a ~5% forecast-accuracy gain
-            over traditional NLP baselines.
+            Built a Python pipeline collecting and cleaning 1,000+ stock-news
+            articles on Magnificent-7 names, scored each article's sentiment
+            with the GPT-4 API (early access), and tested an LSTM forecasting
+            model with and without the sentiment features to isolate their
+            lift; co-authored a department-supported paper showing a ~5%
+            forecast-accuracy gain over traditional-NLP baselines and
+            presented at Hofstra's undergraduate research conference.
           </p>
         </article>
       </section>
 
-      <section id="research" aria-labelledby="research-heading">
-        <h2 id="research-heading">Research &amp; education</h2>
-        <p>
-          Co-authored NLP research (with an early-access GPT-4 grant) showing
-          large language models outperform traditional sentiment tools on
-          financial forecasting — a +5% accuracy gain, and the starting point
-          of everything on this page.
-        </p>
-        <p>
-          BBA, Business Analytics (STEM), minor in Finance — GPA 4.0 (major) /
-          3.98 (cumulative), Honors College with Distinction, Presidential
-          Scholarship.
-        </p>
-        <p class="credentials">
-          AI Fluency &amp; Claude 101 (Anthropic) · Oracle Certified Generative
-          AI Professional · SIE (FINRA) · Bloomberg Market Concepts ·
-          Microsoft Excel Associate
-        </p>
+      <section id="community" aria-labelledby="community-heading">
+        <h2 id="community-heading">Leadership &amp; community</h2>
+
+        <article class="role">
+          <div class="role-head">
+            <h3>Help Ukraine Store</h3>
+            <span class="when">2022 – 2024</span>
+          </div>
+          <p class="role-title">Founder &amp; TikTok Content Lead</p>
+          <p>
+            Founded and ran a Ukraine-relief apparel store end-to-end —
+            Shopify storefront, print-on-demand and in-house inventory, ~590
+            hoodies packed and shipped — and created its street-interview
+            TikTok format, filming and editing every video and posting 3×/week
+            to reach 11.4M views and 1.8M likes. Raised $44,500 for 32
+            war-affected children through the Voices of Children Foundation
+            and directly to affected families; featured by Voice of America.
+          </p>
+        </article>
+
+        <article class="role">
+          <div class="role-head">
+            <h3>Kind Deeds, Inc. (501(c)(3))</h3>
+            <span class="when">2022 – 2026</span>
+          </div>
+          <p class="role-title">Volunteer</p>
+          <p>
+            Researched prosthetics providers and rehabilitation options for
+            severely wounded Ukrainians and kept the books on donations and
+            treatment expenses for a nonprofit that has fitted 50+ soldiers
+            with free prosthetics; built partnerships with clinics and donors
+            across the Ukrainian diaspora behind its $1.1M+ raised.
+          </p>
+        </article>
+
+        <article class="role">
+          <div class="role-head">
+            <h3>Hofstra University</h3>
+            <span class="when">2022 – 2025</span>
+          </div>
+          <p class="role-title">Teacher &amp; Student Leader</p>
+          <p>
+            Taught elementary-school students financial foundations through
+            the Money &amp; Me program; led startup workshops at the Zarb
+            Entrepreneurship Academy; hosted admitted students and parents as
+            a Zarb Business Ambassador; led Rabinowitz Honors College summer
+            service programs at local community centers and libraries.
+          </p>
+        </article>
       </section>
 
-      <p class="impact">
-        Founded a Ukraine-relief store that raised $44,500 for 32 war-affected
-        children — 11.3M views, featured on Voice of America.
-      </p>
-
-      <p class="skills">
-        Python · SQL · Claude / LLM agents · Automation · RevOps · Tableau /
-        Power BI · Ukrainian / Russian (native)
-      </p>
+      <section id="education" aria-labelledby="education-heading">
+        <h2 id="education-heading">Education &amp; credentials</h2>
+        <p>
+          BBA, Business Analytics (STEM), minor in Finance — Hofstra
+          University. GPA 4.0 (major) / 3.98 (cumulative), Honors College
+          Degree with Distinction, Presidential Scholarship. Best Paper,
+          Journal of International Business &amp; Law ("Homes for Profit,"
+          2025); 1st place, Zarb Capture-the-Flag cybersecurity competition;
+          2nd place, Hofstra Shark-Tank-style challenge.
+        </p>
+        <p class="credentials">
+          Anthropic certifications: AI Fluency · AI Fluency for Nonprofits ·
+          Claude 101 · Building with the Claude API · MCP: Advanced Topics.
+          Plus Oracle Certified Generative AI Professional · SIE (FINRA) ·
+          Bloomberg Market Concepts · Microsoft Excel Associate.
+        </p>
+        <p class="skills">
+          Python (pandas, PySpark, PyTorch) · SQL &amp; Snowflake · Claude API
+          + MCP · agentic workflows · LSTM forecasting · Tableau / Power BI ·
+          Excel (Office Script) · Ukrainian &amp; Russian (native)
+        </p>
+      </section>
 
       <footer class="contact" id="contact">
         <a href="https://www.linkedin.com/in/erdyv-yuliia">LinkedIn</a>
@@ -210,23 +348,25 @@ const description =
 
 <style>
   :root {
-    --bg: #f0eee6;
-    --card: #faf9f5;
-    --text: #1f1e1d;
-    --muted: #6b6a61;
-    --rule: #e3ded2;
+    --bg: #faf9f5;
+    --surface: #f0eee6;
+    --text: #141413;
+    --muted: #6f6e66;
+    --rule: #ddd8cb;
     --accent: #c15f3c;
+    --accent-ink: #a84b2b;
     color-scheme: light dark;
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
       --bg: #1a1915;
-      --card: #211f1a;
+      --surface: #232019;
       --text: #edeae3;
       --muted: #a39f93;
-      --rule: #33312b;
+      --rule: #35322a;
       --accent: #e08d63;
+      --accent-ink: #eda37f;
     }
   }
 
@@ -249,7 +389,7 @@ const description =
   }
 
   nav {
-    max-width: 44rem;
+    max-width: 46rem;
     margin: 0 auto;
     padding: 1.5rem 1.5rem 0;
     display: flex;
@@ -264,13 +404,13 @@ const description =
 
   nav a:hover,
   nav a:focus-visible {
-    color: var(--accent);
+    color: var(--accent-ink);
   }
 
   main {
-    max-width: 44rem;
+    max-width: 46rem;
     margin: 0 auto;
-    padding: 4.5rem 1.5rem 5rem;
+    padding: 5rem 1.5rem 5rem;
     animation: fade-in 0.6s ease-out both;
   }
 
@@ -295,35 +435,47 @@ const description =
   }
 
   .hero {
-    margin-bottom: 4.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .kicker {
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    margin-bottom: 1rem;
   }
 
   h1 {
     font-family: "Source Serif 4 Variable", Georgia, "Times New Roman", serif;
-    font-size: 3rem;
-    font-weight: 550;
-    letter-spacing: -0.015em;
-    margin-bottom: 1.25rem;
+    font-size: clamp(2.6rem, 7vw, 3.9rem);
+    font-weight: 560;
+    letter-spacing: -0.02em;
+    line-height: 1.08;
+    margin-bottom: 1.5rem;
   }
 
   .tagline {
     font-family: "Source Serif 4 Variable", Georgia, serif;
-    font-size: 1.3rem;
+    font-size: clamp(1.2rem, 3vw, 1.45rem);
     font-weight: 420;
     line-height: 1.5;
     max-width: 40rem;
   }
 
   .subline {
-    margin-top: 1rem;
+    margin-top: 1.1rem;
     color: var(--muted);
     font-size: 1rem;
+    max-width: 38rem;
   }
 
   .hero-actions {
-    margin-top: 1.75rem;
+    margin-top: 2rem;
     display: flex;
-    gap: 0.75rem;
+    gap: 0.65rem;
+    flex-wrap: wrap;
   }
 
   .button {
@@ -331,9 +483,10 @@ const description =
     background: var(--accent);
     color: var(--bg);
     font-weight: 550;
-    font-size: 0.95rem;
-    padding: 0.55rem 1.1rem;
-    border-radius: 8px;
+    font-size: 0.93rem;
+    padding: 0.55rem 1.2rem;
+    border-radius: 999px;
+    border: 1px solid transparent;
   }
 
   .button:hover,
@@ -344,52 +497,137 @@ const description =
 
   .button.ghost {
     background: transparent;
-    color: var(--accent);
+    color: var(--accent-ink);
     border: 1px solid var(--rule);
+  }
+
+  .button.ghost:hover,
+  .button.ghost:focus-visible {
+    border-color: var(--accent);
+    filter: none;
+  }
+
+  .about {
+    border-top: 1px solid var(--rule);
+    padding-top: 2.25rem;
+    margin-bottom: 4.5rem;
+  }
+
+  .about p {
+    font-size: 1.05rem;
+    max-width: 42rem;
   }
 
   section {
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
   }
 
   h2 {
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--accent);
-    margin-bottom: 1.75rem;
+    font-family: "Source Serif 4 Variable", Georgia, serif;
+    font-size: 1.7rem;
+    font-weight: 560;
+    letter-spacing: -0.01em;
+    border-top: 1px solid var(--rule);
+    padding-top: 2rem;
+    margin-bottom: 1.9rem;
   }
 
   .build {
-    background: var(--card);
+    background: var(--surface);
     border: 1px solid var(--rule);
-    border-radius: 12px;
-    padding: 1.5rem 1.75rem;
+    border-radius: 16px;
+    padding: 1.6rem 1.85rem;
     margin-bottom: 1.25rem;
+  }
+
+  .build.featured {
+    border-color: var(--accent);
+    padding: 1.9rem 1.85rem;
+  }
+
+  .build-head {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .badge {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--bg);
+    background: var(--accent);
+    padding: 0.14rem 0.6rem;
+    border-radius: 999px;
+    white-space: nowrap;
   }
 
   h3 {
     font-family: "Source Serif 4 Variable", Georgia, serif;
-    font-size: 1.3rem;
+    font-size: 1.32rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+  }
+
+  .featured h3 {
+    font-size: 1.5rem;
+  }
+
+  .problem {
+    font-family: "Source Serif 4 Variable", Georgia, serif;
+    font-style: italic;
+    color: var(--muted);
+    margin-bottom: 0.6rem;
   }
 
   .build p {
     color: var(--muted);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.85rem;
     font-size: 0.97rem;
   }
 
+  .build p.problem {
+    color: var(--muted);
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-bottom: 1.05rem;
+  }
+
+  .tags span {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--muted);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 0.08rem 0.6rem;
+    white-space: nowrap;
+  }
+
+  .build-actions {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-bottom: 0 !important;
+  }
+
+  .build-actions .button {
+    font-size: 0.88rem;
+    padding: 0.45rem 1.05rem;
+  }
+
   .meta-build {
-    margin-top: 1.25rem;
+    margin-top: 1.4rem;
     font-size: 0.9rem;
     color: var(--muted);
   }
 
   .role {
-    padding: 1.1rem 0;
+    padding: 1.2rem 0;
     border-bottom: 1px solid var(--rule);
   }
 
@@ -405,7 +643,7 @@ const description =
   }
 
   .role h3 {
-    font-size: 1.12rem;
+    font-size: 1.14rem;
     margin-bottom: 0.15rem;
   }
 
@@ -416,10 +654,10 @@ const description =
   }
 
   .role-title {
-    color: var(--accent);
+    color: var(--accent-ink);
     font-size: 0.9rem;
-    font-weight: 500;
-    margin-bottom: 0.4rem;
+    font-weight: 550;
+    margin-bottom: 0.45rem;
   }
 
   .role p:last-child {
@@ -427,13 +665,13 @@ const description =
     font-size: 0.95rem;
   }
 
-  #research p {
-    margin-bottom: 0.9rem;
-    max-width: 40rem;
+  #education p {
+    margin-bottom: 1rem;
+    max-width: 42rem;
   }
 
   a {
-    color: var(--accent);
+    color: var(--accent-ink);
     text-decoration: none;
   }
 
@@ -443,30 +681,8 @@ const description =
     text-underline-offset: 3px;
   }
 
-  .project-link {
-    font-weight: 500;
-    font-size: 0.95rem;
-  }
-
-  .project-link::after {
-    content: " \2192";
-  }
-
-  .impact {
-    border-top: 1px solid var(--rule);
-    margin-top: 0;
-    padding-top: 1.75rem;
-    font-family: "Source Serif 4 Variable", Georgia, serif;
-    font-size: 1.05rem;
-  }
-
+  .credentials,
   .skills {
-    margin-top: 1.5rem;
-    font-size: 0.92rem;
-    color: var(--muted);
-  }
-
-  .credentials {
     font-size: 0.92rem;
     color: var(--muted);
   }
@@ -485,14 +701,18 @@ const description =
     main {
       padding-top: 3rem;
     }
-    h1 {
-      font-size: 2.3rem;
+    .hero {
+      margin-bottom: 3rem;
     }
-    .tagline {
-      font-size: 1.12rem;
+    .about {
+      margin-bottom: 3.5rem;
     }
-    .build {
-      padding: 1.25rem 1.25rem;
+    section {
+      margin-bottom: 3.5rem;
+    }
+    .build,
+    .build.featured {
+      padding: 1.3rem 1.25rem;
     }
     nav {
       gap: 1rem;
