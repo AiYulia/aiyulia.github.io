@@ -1,11 +1,10 @@
 ---
 // One-page portfolio. Static, no client-side JS.
-import "@fontsource-variable/source-serif-4";
 import "@fontsource-variable/inter";
 
-const title = "Yuliia Erdyv · Applied AI & Data";
+const title = "Yuliia Erdyv · Revenue Operations";
 const description =
-  "I taught myself to build AI tools that help people get through hard systems, starting with my own community.";
+  "Revenue operations analyst in Charlotte, NC. Daily revenue reporting, forecasting, and sales coaching analytics built on Snowflake SQL and self-contained HTML dashboards.";
 ---
 
 <!doctype html>
@@ -25,184 +24,92 @@ const description =
     <nav aria-label="Sections">
       <a href="#work">Work</a>
       <a href="#experience">Experience</a>
-      <a href="#community">Community</a>
+      <a href="#education">Education</a>
       <a href="/resume.pdf">Resume</a>
       <a href="#contact">Contact</a>
     </nav>
     <main>
       <header class="hero">
-        <p class="kicker">Charlotte, NC · Applied AI &amp; Data</p>
+        <p class="kicker">Charlotte, NC · Revenue Operations</p>
         <h1>Yuliia Erdyv</h1>
         <p class="tagline">
-          I taught myself to build AI tools that help people get through
-          hard systems, starting with my own community.
+          I build the reports sales leaders run their day on: daily revenue
+          and funnel reporting, forecasting, and rep-level coaching analytics.
         </p>
         <p class="subline">
-          Most recently: Applied AI &amp; Data Science co-op at JG Wentworth.
-          Open to applied-AI, data, and AI-for-good roles.
+          Most recently Revenue Operations Analyst at JG Wentworth, working
+          with sales and marketing leadership on Snowflake SQL, Excel, and
+          HTML dashboards.
         </p>
         <p class="hero-actions">
           <a class="button" href="#work">See the work</a>
           <a class="button ghost" href="/resume.pdf">Resume (PDF)</a>
           <a class="button ghost" href="https://www.linkedin.com/in/erdyv-yuliia">LinkedIn</a>
-          <a class="button ghost" href="https://github.com/AiYulia">GitHub</a>
         </p>
       </header>
 
-      <section class="about" aria-label="About">
-        <p>
-          I build practical, human-in-the-loop AI: tools that read messy
-          real-world information, from rental listings to government forms to
-          sales calls, and hand people a clear decision with the reasoning
-          attached.
-          Everything below is real, running, and documented. The methodology is
-          mine; the code is pair-built with Claude.
-        </p>
-      </section>
-
       <section id="work" aria-labelledby="work-heading">
         <h2 id="work-heading">Work</h2>
+        <p class="section-note">
+          Two real reports from my Revenue Operations work, published with
+          every channel, rep, and director name and every number changed.
+          Layout, logic, and calculations are the originals.
+        </p>
 
-        <article class="build featured">
+        <article class="build">
+          <a class="shot" href="https://aiyulia.github.io/daily-revenue-report/dashboard.html">
+            <img src="/img/daily-revenue-report.png" width="1440" height="900" loading="lazy"
+              alt="Daily Revenue Operations dashboard: green header band, grouped tab bar, and trend charts by lead priority" />
+          </a>
           <div class="build-head">
-            <h3>apartment-hunt</h3>
-            <span class="badge">Live demo</span>
+            <h3>Daily Revenue Operations</h3>
+            <span class="badge">Live</span>
           </div>
-          <p class="problem">
-            Listings hide the real price, and gamed reviews bury the truth.
-          </p>
+          <p class="problem">The sales floor's morning read, in one page.</p>
           <p>
-            A rental-vetting dashboard that ranks 160+ real Charlotte-metro
-            listings on true effective rent after concessions, runs a
-            review-forensics pass that flags manipulated ratings instead of
-            trusting them, and resolves every listing to a clear verdict with
-            its reasoning shown. Three views: cards, interactive map, and a
-            sortable list.
+            A daily report rebuilt from an Excel workbook into a single
+            self-contained HTML page, in the dashboard style I developed for
+            the teams. Funnel trends by lead priority and marketing channel
+            (calls per lead, PQL to QL, PQL to enroll, QL to enroll, percent
+            reached), 5-day and weekly aggregates, a rep-tier view, enrollment
+            mix shift, weekend trends, and the raw data and SQL behind every
+            number.
           </p>
           <p class="tags">
-            <span>HTML / CSS / JS</span><span>Leaflet</span><span>review forensics</span><span>real data</span>
+            <span>Snowflake SQL</span><span>Python</span><span>self-contained HTML</span><span>SVG charts</span>
           </p>
           <p class="build-actions">
-            <a class="button" href="https://aiyulia.github.io/apartment-hunt/dashboard.html">Open the live dashboard</a>
-            <a class="button ghost" href="https://github.com/AiYulia/apartment-hunt">GitHub</a>
+            <a class="button" href="https://aiyulia.github.io/daily-revenue-report/dashboard.html">Open the dashboard</a>
+            <a class="button ghost" href="https://github.com/AiYulia/daily-revenue-report">GitHub</a>
           </p>
         </article>
 
         <article class="build">
+          <a class="shot" href="https://aiyulia.github.io/directors-workbook/dashboard.html">
+            <img src="/img/directors-workbook.png" width="1440" height="900" loading="lazy"
+              alt="Director Coaching Workbook: rep leaderboard by team with tier, score, and goal pace" />
+          </a>
           <div class="build-head">
-            <h3>immigration-doc-explainer</h3>
+            <h3>Director Coaching Workbook</h3>
+            <span class="badge">Live</span>
           </div>
-          <p class="problem">
-            Government forms are hard, and harder still in your second language.
-          </p>
+          <p class="problem">Which rep needs which coaching, and on which leads.</p>
           <p>
-            A Claude-powered tool that explains a USCIS work-permit form
-            (I-765) in plain English and Ukrainian: what the form is, what
-            your eligibility category means, the fee, what happens next, and
-            the mistakes that get forms rejected. Built from public form
-            information and synthetic examples only, with a hard
-            "explain, don't advise" design; the demo runs with no API key.
+            Sales directors' workbook for tiering and coaching reps: team
+            leaderboards, conversion by lead source and channel tier against
+            the sales-floor benchmark, dialer activity by hour and day, and the
+            conversation-data section I added, which scores call transcripts
+            for objection rebuttals, discovery, and talk share against each
+            tier's median.
           </p>
           <p class="tags">
-            <span>Python</span><span>Claude API</span><span>bilingual EN / UK</span>
+            <span>Snowflake SQL</span><span>Python</span><span>call-transcript scoring</span><span>self-contained HTML</span>
           </p>
           <p class="build-actions">
-            <a class="button ghost" href="https://github.com/AiYulia/immigration-doc-explainer">GitHub</a>
-          </p>
-        </article>
-
-        <article class="build">
-          <div class="build-head">
-            <h3>directors-workbook</h3>
-            <span class="badge">Live demo</span>
-          </div>
-          <p class="problem">
-            Sales-team reviews drown in spreadsheets nobody reads.
-          </p>
-          <p>
-            A public, fully synthetic recreation of a sales director's
-            team-review method: one Python script rolls invented reps and
-            deals up into a self-contained HTML workbook a director can
-            actually read. No employer data, no real schema, method only.
-          </p>
-          <p class="tags">
-            <span>Python</span><span>self-contained HTML</span><span>synthetic data</span>
-          </p>
-          <p class="build-actions">
-            <a class="button" href="https://aiyulia.github.io/directors-workbook/dashboard.html">Open the live workbook</a>
+            <a class="button" href="https://aiyulia.github.io/directors-workbook/dashboard.html">Open the workbook</a>
             <a class="button ghost" href="https://github.com/AiYulia/directors-workbook">GitHub</a>
           </p>
         </article>
-
-        <article class="build">
-          <div class="build-head">
-            <h3>market-research-engine</h3>
-          </div>
-          <p class="problem">
-            Equity research means juggling six sources that don't talk.
-          </p>
-          <p>
-            A multi-source research system: macro (FRED), fundamentals
-            (SEC/EDGAR), options (Polygon), and crowd signal (Reddit), scored
-            through a market-regime model into dashboards a human can act on.
-            Wired through MCP servers and direct API clients; runs on a real
-            122-name watchlist with a synthetic sample book.
-          </p>
-          <p class="tags">
-            <span>Python</span><span>MCP</span><span>FRED · EDGAR · Polygon</span><span>pytest</span>
-          </p>
-          <p class="build-actions">
-            <a class="button ghost" href="https://github.com/AiYulia/market-research-engine">GitHub</a>
-          </p>
-        </article>
-
-        <article class="build">
-          <div class="build-head">
-            <h3>lead-scoring-ml</h3>
-          </div>
-          <p class="problem">
-            When does a transparent model beat a black box?
-          </p>
-          <p>
-            A small, honest machine-learning study: on realistic funnel data,
-            logistic regression beats gradient boosting (ROC-AUC 0.770 vs
-            0.741), and it can explain every score it gives. Documented
-            synthetic dataset, 5-fold cross-validation, reproducible end to
-            end.
-          </p>
-          <p class="tags">
-            <span>scikit-learn</span><span>pandas</span><span>5-fold CV</span>
-          </p>
-          <p class="build-actions">
-            <a class="button ghost" href="https://github.com/AiYulia/lead-scoring-ml">GitHub</a>
-          </p>
-        </article>
-
-        <article class="build">
-          <div class="build-head">
-            <h3>speech-coach</h3>
-          </div>
-          <p class="problem">
-            Deliberate practice only works if it actually happens.
-          </p>
-          <p>
-            An AI speech-coaching CLI for English learners with a
-            Ukrainian/Russian background: structured daily practice sessions,
-            drills, and progress tracking with streaks. Python; 16 passing
-            tests.
-          </p>
-          <p class="tags">
-            <span>Python</span><span>CLI</span><span>16 tests</span>
-          </p>
-          <p class="build-actions">
-            <a class="button ghost" href="https://github.com/AiYulia/speech-coach">GitHub</a>
-          </p>
-        </article>
-
-        <p class="meta-build">
-          This site is a build too: Astro, fully static, no trackers, no keys.&nbsp;
-          <a href="https://github.com/AiYulia/aiyulia.github.io">Source on GitHub</a>
-        </p>
       </section>
 
       <section id="experience" aria-labelledby="experience-heading">
@@ -211,134 +118,71 @@ const description =
         <article class="role">
           <div class="role-head">
             <h3>JG Wentworth</h3>
-            <span class="when">Jan – Jun 2026</span>
+            <span class="when">Aug 2024 – Sep 2026</span>
           </div>
-          <p class="role-title">Applied AI &amp; Data Science Co-op</p>
-          <p>
-            Secured Observe.AI Reporting-API access and built the Python
-            pipeline (hands-on with Claude + Snowflake MCP) that unpacked
-            speaker-tagged call transcripts into Snowflake; engineered
-            semantic and sentiment scoring with Snowflake Cortex AISQL;
-            proved the call-derived features carried cancellation-risk signal
-            and contributed them by pull request into the team's LightGBM
-            model, lifting AUC +0.02; owned the compliance layer (TCPA
-            calling windows, DNC rules, CFPB-oriented QA), keeping scoring
-            fair and uniform across agents.
-          </p>
+          <p class="role-title">Revenue Operations Analyst</p>
+          <ul>
+            <li>Developed the corporate dashboard style adopted by every team while rebuilding Power BI and Excel reports as HTML on shared, Airflow-scheduled Snowflake SQL; helped add an AI summary (RAG) to the morning alert email naming which metrics suffered and why.</li>
+            <li>Upgraded the MBR/QBR profitability package for the C-suite and VPs, with a mirrored interactive dashboard that expands every summary figure into its underlying detail.</li>
+            <li>Built separate weekday and weekend forecasts with time-series regression and day-of-week seasonality, which surfaced a cheap bucket of Sunday leads worth buying and working first thing Monday.</li>
+            <li>Added a conversation-data section to Sales' Directors Workbook, scoring call transcripts for sentiment, objections, and rebuttals; it spotted experienced new hires before any enrollment data existed and cut their onboarding from 3 months to 1.</li>
+            <li>Built a marketing-by-sales view in 15-minute cohorts that exposed two timing gaps: evening leads waiting on too few Pacific-time reps, and morning paid-search leads going cold before first contact.</li>
+          </ul>
         </article>
 
         <article class="role">
           <div class="role-head">
             <h3>J.P. Morgan · U.S. Private Bank</h3>
-            <span class="when">Summer 2024</span>
+            <span class="when">May 2024 – Aug 2024</span>
           </div>
           <p class="role-title">Summer Analyst, Asset &amp; Wealth Management</p>
-          <p>
-            Built an automated portfolio data-flow tool over J.P. Morgan's
-            internal data for a client's $1B+ portfolio: hours of manual
-            re-entry became a minutes-long refresh the banker team kept using;
-            ran Monte Carlo simulations across a 35-client, $7B
-            ultra-high-net-worth book to pinpoint likely converters out of
-            cash-heavy portfolios and built the investor–client pitch decks;
-            built an Excel (Office Script) screening tool that turned the
-            client book into per-banker priority lists as rate cuts ended
-            5.3–5.6% cash yields.
-          </p>
+          <ul>
+            <li>Built a branch-referral tracker in Python, Excel, and VBA for high-net-worth clients walking into Chase branches in five cities, connecting Private Bank bankers with Chase regional directors; it brought in 2 new clients during the internship and stayed in use after it ended.</li>
+            <li>Built the cash-redeployment pipeline for every banker and investor on the floor ahead of expected Fed rate cuts, ranking clients by idle cash in Excel (Office Script), with Monte Carlo forecasts for client meetings; it helped move $750M from cash into invested assets.</li>
+            <li>Co-built an AI prospect-research app on the ChatGPT API and owned its API integration and source-verification layer; the summer-long project won 1st of 12 eight-person teams.</li>
+            <li>Handled client communication for the banker and investor team with market analysis from the Bloomberg Terminal, and kept a weekly report on client activity and outreach progress.</li>
+          </ul>
         </article>
 
         <article class="role">
           <div class="role-head">
-            <h3>Hofstra University · Business Analytics Dept.</h3>
-            <span class="when">2022 – 2023</span>
+            <h3>David W. Chefec</h3>
+            <span class="when">Nov 2022 – Apr 2024</span>
           </div>
-          <p class="role-title">Research Assistant to Dr. Hak Kim</p>
-          <p>
-            Built a Python pipeline collecting and cleaning 1,000+ stock-news
-            articles on Magnificent-7 names, scored each article's sentiment
-            with the GPT-4 API (early access), and tested an LSTM forecasting
-            model with and without the sentiment features to isolate their
-            lift; co-authored a department-supported paper showing a ~5% gain
-            in directional forecast accuracy over standard Python NLP
-            baselines and presented at Hofstra's Undergraduate Research Day.
-          </p>
-        </article>
-      </section>
-
-      <section id="community" aria-labelledby="community-heading">
-        <h2 id="community-heading">Leadership &amp; community</h2>
-
-        <article class="role">
-          <div class="role-head">
-            <h3>Help Ukraine Store</h3>
-            <span class="when">2022 – 2024</span>
-          </div>
-          <p class="role-title">Founder &amp; TikTok Content Lead</p>
-          <p>
-            Founded and ran a Ukraine-relief apparel store end-to-end:
-            Shopify storefront, print-on-demand and in-house inventory, ~590
-            hoodies packed and shipped. Created its street-interview
-            TikTok format, filming and editing every video and posting 3×/week
-            to reach 14M views and 1.8M likes. Raised $44,500 for 32
-            war-affected children through the Voices of Children Foundation
-            and directly to affected families; featured by Voice of America.
-          </p>
-        </article>
-
-        <article class="role">
-          <div class="role-head">
-            <h3>Kind Deeds, Inc. (501(c)(3))</h3>
-            <span class="when">2022 – 2026</span>
-          </div>
-          <p class="role-title">Volunteer</p>
-          <p>
-            Researched prosthetics providers and rehabilitation options for
-            severely wounded Ukrainians and kept the books on donations and
-            treatment expenses for a nonprofit that has fitted 50+ soldiers
-            with free prosthetics; built partnerships with clinics and donors
-            across the Ukrainian diaspora behind its $1.1M+ raised.
-          </p>
-        </article>
-
-        <article class="role">
-          <div class="role-head">
-            <h3>Hofstra University</h3>
-            <span class="when">2022 – 2025</span>
-          </div>
-          <p class="role-title">Teacher &amp; Student Leader</p>
-          <p>
-            Taught elementary-school students financial foundations through
-            the Money &amp; Me program; led startup workshops at the Zarb
-            Entrepreneurship Academy; hosted admitted students and parents as
-            a Zarb Business Ambassador; led Rabinowitz Honors College summer
-            service programs at local community centers and libraries.
-          </p>
+          <p class="role-title">Legal Assistant Paralegal</p>
+          <ul>
+            <li>Designed and maintained an Excel case and deadline tracker giving the attorney one up-to-date view of every matter's stage and upcoming filings.</li>
+            <li>Drafted filings, forms, and client correspondence, and ran client intake and follow-ups from first contact through final submission.</li>
+            <li>Managed billing and collections reporting: invoices, incoming payments, and regular summaries of outstanding balances.</li>
+          </ul>
         </article>
       </section>
 
       <section id="education" aria-labelledby="education-heading">
-        <h2 id="education-heading">Education &amp; credentials</h2>
+        <h2 id="education-heading">Education</h2>
         <p>
-          BBA, Business Analytics (STEM), minor in Finance at Hofstra
-          University. GPA 4.0 (major) / 3.98 (cumulative), Honors College
-          Degree with Distinction, Presidential Scholarship. Best Paper,
-          Journal of International Business &amp; Law ("Homes for Profit,"
-          2025); 1st place, Zarb Capture-the-Flag cybersecurity competition;
-          2nd place, Hofstra Shark-Tank-style challenge.
-        </p>
-        <p class="credentials">
-          Anthropic certifications: AI Fluency · AI Fluency for Nonprofits ·
-          Claude 101 · Building with the Claude API · MCP: Advanced Topics.
-          Plus Oracle Certified Generative AI Professional · SIE (FINRA) ·
-          Bloomberg Market Concepts · Microsoft Excel Associate.
-        </p>
-        <p class="skills">
-          Python (pandas, PySpark, PyTorch) · SQL &amp; Snowflake · Claude API
-          + MCP · agentic workflows · LSTM forecasting · Tableau / Power BI ·
-          Excel (Office Script) · Ukrainian &amp; Russian (native)
+          <strong>BBA, Business Analytics (STEM), minor in Finance</strong>,
+          Hofstra University, May 2025. GPA 4.0 (major) / 3.98 (cumulative),
+          Honors College Degree with Distinction, Presidential Scholarship.
+          Best Paper, Journal of International Business &amp; Law ("Homes for
+          Profit," 2025).
         </p>
       </section>
 
+      <section id="skills" aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Skills</h2>
+        <dl class="skills">
+          <dt>Revenue operations</dt>
+          <dd>Forecasting, pipeline and funnel analysis, conversion and win-rate analysis, rep-level performance tracking, CRM and pipeline hygiene, staffing and capacity modeling, MBR/QBR reporting, process documentation</dd>
+          <dt>Tools</dt>
+          <dd>Excel (advanced modeling, scenario analysis, Office Script), Google Sheets, Salesforce, SQL (Snowflake), Tableau, Power BI, Python (pandas), HTML reporting, Five9, Observe.AI</dd>
+          <dt>AI</dt>
+          <dd>Claude and Claude Code, Snowflake Cortex AI, LLM-based sentiment and semantic scoring, prompt engineering</dd>
+        </dl>
+      </section>
+
       <footer class="contact" id="contact">
+        <a href="mailto:erdyv.yuliia@gmail.com">erdyv.yuliia@gmail.com</a>
         <a href="https://www.linkedin.com/in/erdyv-yuliia">LinkedIn</a>
         <a href="https://github.com/AiYulia">GitHub</a>
         <a href="/resume.pdf">Resume</a>
@@ -352,7 +196,7 @@ const description =
     --bg: #faf9f5;
     --surface: #f0eee6;
     --text: #141413;
-    --muted: #6f6e66;
+    --muted: #5f5e57;
     --rule: #ddd8cb;
     --accent: #c15f3c;
     --accent-ink: #a84b2b;
@@ -384,13 +228,14 @@ const description =
   body {
     font-family: "Inter Variable", -apple-system, "Segoe UI", Helvetica, Arial,
       sans-serif;
+    font-feature-settings: "cv11", "ss01";
     color: var(--text);
-    line-height: 1.65;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
 
   nav {
-    max-width: 46rem;
+    max-width: 48rem;
     margin: 0 auto;
     padding: 1.5rem 1.5rem 0;
     display: flex;
@@ -409,9 +254,9 @@ const description =
   }
 
   main {
-    max-width: 46rem;
+    max-width: 48rem;
     margin: 0 auto;
-    padding: 5rem 1.5rem 5rem;
+    padding: 4.5rem 1.5rem 5rem;
     animation: fade-in 0.6s ease-out both;
   }
 
@@ -440,40 +285,39 @@ const description =
   }
 
   .kicker {
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     font-weight: 600;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--accent-ink);
-    margin-bottom: 1rem;
+    margin-bottom: 0.9rem;
   }
 
   h1 {
-    font-family: "Source Serif 4 Variable", Georgia, "Times New Roman", serif;
-    font-size: clamp(2.6rem, 7vw, 3.9rem);
-    font-weight: 560;
-    letter-spacing: -0.02em;
-    line-height: 1.08;
-    margin-bottom: 1.5rem;
+    font-size: clamp(2.4rem, 6.5vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+    margin-bottom: 1.25rem;
   }
 
   .tagline {
-    font-family: "Source Serif 4 Variable", Georgia, serif;
-    font-size: clamp(1.2rem, 3vw, 1.45rem);
-    font-weight: 420;
+    font-size: clamp(1.12rem, 2.6vw, 1.3rem);
+    font-weight: 450;
+    letter-spacing: -0.01em;
     line-height: 1.5;
     max-width: 40rem;
   }
 
   .subline {
-    margin-top: 1.1rem;
+    margin-top: 1rem;
     color: var(--muted);
     font-size: 1rem;
     max-width: 38rem;
   }
 
   .hero-actions {
-    margin-top: 2rem;
+    margin-top: 1.9rem;
     display: flex;
     gap: 0.65rem;
     flex-wrap: wrap;
@@ -483,10 +327,10 @@ const description =
     display: inline-block;
     background: var(--accent);
     color: var(--bg);
-    font-weight: 550;
-    font-size: 0.93rem;
-    padding: 0.55rem 1.2rem;
-    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.92rem;
+    padding: 0.55rem 1.15rem;
+    border-radius: 8px;
     border: 1px solid transparent;
   }
 
@@ -508,87 +352,88 @@ const description =
     filter: none;
   }
 
-  .about {
-    border-top: 1px solid var(--rule);
-    padding-top: 2.25rem;
+  section {
     margin-bottom: 4.5rem;
   }
 
-  .about p {
-    font-size: 1.05rem;
-    max-width: 42rem;
-  }
-
-  section {
-    margin-bottom: 5rem;
-  }
-
   h2 {
-    font-family: "Source Serif 4 Variable", Georgia, serif;
-    font-size: 1.7rem;
-    font-weight: 560;
-    letter-spacing: -0.01em;
+    font-size: 0.8rem;
+    font-weight: 650;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
     border-top: 1px solid var(--rule);
-    padding-top: 2rem;
-    margin-bottom: 1.9rem;
+    padding-top: 1.6rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .section-note {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    max-width: 40rem;
   }
 
   .build {
     background: var(--surface);
     border: 1px solid var(--rule);
-    border-radius: 16px;
-    padding: 1.6rem 1.85rem;
-    margin-bottom: 1.25rem;
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem 1.5rem;
+    margin-bottom: 1.5rem;
   }
 
-  .build.featured {
-    border-color: var(--accent);
-    padding: 1.9rem 1.85rem;
+  .shot {
+    display: block;
+    margin: 0 0 1.2rem;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  .shot img {
+    display: block;
+    width: 100%;
+    height: auto;
   }
 
   .build-head {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 0.35rem;
+    gap: 0.7rem;
+    margin-bottom: 0.3rem;
   }
 
   .badge {
-    font-size: 0.72rem;
-    font-weight: 600;
+    font-size: 0.7rem;
+    font-weight: 650;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--bg);
     background: var(--accent);
-    padding: 0.14rem 0.6rem;
+    padding: 0.12rem 0.55rem;
     border-radius: 999px;
     white-space: nowrap;
   }
 
   h3 {
-    font-family: "Source Serif 4 Variable", Georgia, serif;
-    font-size: 1.32rem;
-    font-weight: 600;
-  }
-
-  .featured h3 {
-    font-size: 1.5rem;
+    font-size: 1.22rem;
+    font-weight: 650;
+    letter-spacing: -0.015em;
   }
 
   .problem {
-    font-family: "Source Serif 4 Variable", Georgia, serif;
-    font-style: italic;
-    color: var(--muted);
-    margin-bottom: 0.6rem;
+    font-weight: 550;
+    color: var(--text);
+    margin-bottom: 0.55rem;
   }
 
   .build p {
-    color: var(--muted);
     margin-bottom: 0.85rem;
-    font-size: 0.97rem;
+    font-size: 0.96rem;
   }
 
-  .build p.problem {
+  .build p:not(.problem):not(.tags):not(.build-actions) {
     color: var(--muted);
   }
 
@@ -600,12 +445,12 @@ const description =
   }
 
   .tags span {
-    font-size: 0.78rem;
-    font-weight: 500;
+    font-size: 0.76rem;
+    font-weight: 550;
     color: var(--muted);
     border: 1px solid var(--rule);
-    border-radius: 999px;
-    padding: 0.08rem 0.6rem;
+    border-radius: 6px;
+    padding: 0.08rem 0.5rem;
     white-space: nowrap;
   }
 
@@ -618,18 +463,16 @@ const description =
 
   .build-actions .button {
     font-size: 0.88rem;
-    padding: 0.45rem 1.05rem;
-  }
-
-  .meta-build {
-    margin-top: 1.4rem;
-    font-size: 0.9rem;
-    color: var(--muted);
+    padding: 0.45rem 1rem;
   }
 
   .role {
-    padding: 1.2rem 0;
+    padding: 1.3rem 0;
     border-bottom: 1px solid var(--rule);
+  }
+
+  .role:first-of-type {
+    padding-top: 0;
   }
 
   .role:last-of-type {
@@ -644,31 +487,62 @@ const description =
   }
 
   .role h3 {
-    font-size: 1.14rem;
-    margin-bottom: 0.15rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.1rem;
   }
 
   .when {
     color: var(--muted);
     font-size: 0.85rem;
+    font-variant-numeric: tabular-nums;
     white-space: nowrap;
   }
 
   .role-title {
     color: var(--accent-ink);
-    font-size: 0.9rem;
-    font-weight: 550;
-    margin-bottom: 0.45rem;
+    font-size: 0.92rem;
+    font-weight: 600;
+    margin-bottom: 0.55rem;
   }
 
-  .role p:last-child {
+  .role ul {
+    padding-left: 1.1rem;
     color: var(--muted);
     font-size: 0.95rem;
   }
 
+  .role li {
+    margin-bottom: 0.4rem;
+  }
+
+  .role li::marker {
+    color: var(--rule);
+  }
+
   #education p {
-    margin-bottom: 1rem;
     max-width: 42rem;
+    color: var(--muted);
+  }
+
+  #education strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .skills {
+    display: grid;
+    grid-template-columns: 11rem 1fr;
+    gap: 0.6rem 1.25rem;
+    font-size: 0.94rem;
+  }
+
+  .skills dt {
+    font-weight: 600;
+  }
+
+  .skills dd {
+    margin: 0;
+    color: var(--muted);
   }
 
   a {
@@ -682,38 +556,29 @@ const description =
     text-underline-offset: 3px;
   }
 
-  .credentials,
-  .skills {
-    font-size: 0.92rem;
-    color: var(--muted);
-  }
-
   .contact {
     border-top: 1px solid var(--rule);
     margin-top: 3.5rem;
     padding-top: 1.75rem;
     display: flex;
-    gap: 2rem;
-    font-size: 0.97rem;
+    flex-wrap: wrap;
+    gap: 0.75rem 2rem;
+    font-size: 0.95rem;
     font-weight: 500;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 560px) {
     main {
       padding-top: 3rem;
     }
     .hero {
       margin-bottom: 3rem;
     }
-    .about {
-      margin-bottom: 3.5rem;
-    }
     section {
       margin-bottom: 3.5rem;
     }
-    .build,
-    .build.featured {
-      padding: 1.3rem 1.25rem;
+    .build {
+      padding: 1rem 1rem 1.25rem;
     }
     nav {
       gap: 1rem;
@@ -723,6 +588,13 @@ const description =
     .role-head {
       flex-direction: column;
       gap: 0;
+    }
+    .skills {
+      grid-template-columns: 1fr;
+      gap: 0.2rem;
+    }
+    .skills dd {
+      margin-bottom: 0.7rem;
     }
   }
 </style>
