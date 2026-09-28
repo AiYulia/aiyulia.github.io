@@ -30,6 +30,7 @@ const description =
     </nav>
     <main>
       <header class="hero">
+        <img class="portrait" src="/img/yuliia.jpg" width="480" height="480" alt="Portrait of Yuliia Erdyv" />
         <p class="kicker">Charlotte, NC · Revenue Operations</p>
         <h1>Yuliia Erdyv</h1>
         <p class="tagline">
@@ -282,6 +283,25 @@ const description =
 
   .hero {
     margin-bottom: 4rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 2.5rem;
+  }
+
+  .hero > * {
+    grid-column: 1;
+  }
+
+  .hero > .portrait {
+    grid-column: 2;
+    grid-row: 1 / span 4;
+    align-self: start;
+    width: 168px;
+    height: 168px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--rule);
+    margin-top: 0.25rem;
   }
 
   .kicker {
@@ -573,6 +593,13 @@ const description =
     }
     .hero {
       margin-bottom: 3rem;
+      display: block;
+    }
+    .hero > .portrait {
+      display: block;
+      width: 104px;
+      height: 104px;
+      margin: 0 0 1.25rem;
     }
     section {
       margin-bottom: 3.5rem;
