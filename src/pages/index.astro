@@ -1,0 +1,1249 @@
+---
+// One-page portfolio. Static, no client-side JS.
+// data sources:
+//   Experience bullets, Education, Skills: Yuliia Erdyv resume, November 2026 one-page PDF (word for word).
+//   Experience dates: LinkedIn dates supplied with the November 2026 rewrite brief (the PDF dates are wrong).
+//   Work cards: dashboard contents supplied with the November 2026 rewrite brief (synthetic data).
+import "@fontsource-variable/inter";
+
+const title = "Yuliia Erdyv · Product, Rider Experience";
+const description =
+  "Product manager for rider experience in Raleigh, NC: rider-journey analytics, churn modeling, experiments, and self-contained HTML dashboards built with SQL, Python, and Claude Code.";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f5f6f8" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0c121c" media="(prefers-color-scheme: dark)" />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="wrap topbar-inner">
+        <a class="brand" href="#top">Yuliia Erdyv</a>
+        <nav aria-label="Sections">
+          <a href="#publication">Publication</a>
+          <a href="#work">Work</a>
+          <a href="#experience">Experience</a>
+          <a href="#education">Education</a>
+          <a href="/resume.pdf">Resume</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top" class="wrap">
+      <section class="hero" aria-labelledby="hero-name">
+        <div class="hero-text">
+          <p class="kicker">Raleigh, NC · Product, Rider Experience</p>
+          <h1 id="hero-name">Yuliia Erdyv</h1>
+          <p class="tagline">
+            I work on the rider journey from booking to repeat ride: where
+            requests go unfilled, which riders are about to leave, and which
+            product changes bring them back.
+          </p>
+          <ol class="journey" aria-label="The rider journey">
+            <li>Booking</li>
+            <li>Ride</li>
+            <li>Repeat</li>
+          </ol>
+          <p class="hero-actions">
+            <a class="button" href="#work">See the work</a>
+            <a class="button ghost" href="/resume.pdf">Resume (PDF)</a>
+            <a class="button ghost" href="https://www.linkedin.com/in/erdyv-yuliia">LinkedIn</a>
+            <a class="button ghost" href="https://github.com/AiYulia">GitHub</a>
+            <a class="button ghost" href="mailto:erdyv.yuliia@gmail.com">Email</a>
+          </p>
+        </div>
+        <img class="portrait" src="/img/yuliia.jpg" width="480" height="480" alt="Portrait of Yuliia Erdyv" />
+      </section>
+
+      <section id="publication" aria-labelledby="publication-heading">
+        <div class="section-head">
+          <h2 id="publication-heading">Publication</h2>
+        </div>
+
+        <article class="paper">
+          <button type="button" class="zoom paper-cover" popovertarget="lb-jibl" aria-label="View the journal cover larger">
+            <img src="/img/jibl-spring-2025.jpg" width="995" height="1400" loading="lazy"
+              alt="Cover of the Journal of International Business and Law, Volume 24, Issue 2, Spring 2025, listing “Homes for Profit” by Yulia Erdyv under Business School Essays" />
+          </button>
+          <div class="paper-body">
+            <p class="paper-venue">Journal of International Business and Law · Vol. 24, Issue 2 · Spring 2025</p>
+            <h3>Homes for Profit: The Global Rise of Institutional Landlords and the Crisis of Affordability from Atlanta to Berlin</h3>
+            <p class="paper-meta">Yulia Erdyv · Business School Essays · Maurice A. Deane School of Law at Hofstra University</p>
+            <p class="paper-award"><span class="badge">Best Paper</span> Best Paper award for the Spring 2025 issue.</p>
+            <div class="paper-doc">
+              <button type="button" class="zoom" popovertarget="lb-letter" aria-label="View the Best Paper award letter larger">
+                <img src="/img/jibl-best-paper-letter.jpg" width="1320" height="1760" loading="lazy"
+                  alt="Best Paper award letter for the Spring 2025 issue of the Journal of International Business and Law, Frank G. Zarb School of Business, Hofstra University" />
+              </button>
+              <p>
+                <span class="pub-label">Award letter</span>
+                Frank G. Zarb School of Business, Hofstra University. <a href="https://www.hofstrajibl.org/" target="_blank" rel="noopener">Journal website</a>
+              </p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section id="work" aria-labelledby="work-heading">
+        <div class="section-head">
+          <h2 id="work-heading">Work</h2>
+          <p class="section-note">
+            Two dashboards in the style I build for rider-experience reporting.
+            The data is synthetic: every rider, district, and number is
+            generated, and none of it is real data from any company.
+          </p>
+        </div>
+
+        <article class="build">
+          <a class="shot" href="https://aiyulia.github.io/rider-experience-dashboard/dashboard.html" target="_blank" rel="noopener">
+            <img src="/img/rider-journey.png" width="1440" height="900" loading="lazy"
+              alt="Rider Journey dashboard: overview KPIs, unfilled requests by district and hour, and a booking-to-repeat-ride funnel" />
+          </a>
+          <div class="build-body">
+            <div class="build-head">
+              <h3>Rider Journey</h3>
+              <span class="badge">Synthetic data</span>
+            </div>
+            <p class="problem">Where requests go unfilled, and which riders are about to leave.</p>
+            <ul class="features">
+              <li>Overview KPIs: requests, fill rate, unfilled requests, median wait, and 30-day repeat rate</li>
+              <li>Unfilled requests by district and hour</li>
+              <li>A booking-to-repeat-ride funnel</li>
+              <li>A churn-risk model: logistic regression on ride frequency, wait times, and unfilled requests</li>
+              <li>Ops, Marketing, and Product team views</li>
+              <li>The data dictionary and SQL behind every tile</li>
+            </ul>
+            <p class="tags">
+              <span>SQL (Snowflake)</span><span>Python</span><span>logistic regression</span><span>self-contained HTML</span><span>SVG charts</span>
+            </p>
+            <p class="build-actions">
+              <a class="button" href="https://aiyulia.github.io/rider-experience-dashboard/dashboard.html" target="_blank" rel="noopener">Open the dashboard</a>
+              <a class="button ghost" href="https://github.com/AiYulia/rider-experience-dashboard" target="_blank" rel="noopener">GitHub</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="build">
+          <a class="shot" href="https://aiyulia.github.io/rider-experiments/dashboard.html" target="_blank" rel="noopener">
+            <img src="/img/rider-experiments.png" width="1440" height="900" loading="lazy"
+              alt="Rider Experiments dashboard: a recovery campaign against a control group, a midday discount test, and an onboarding funnel by weekly cohort" />
+          </a>
+          <div class="build-body">
+            <div class="build-head">
+              <h3>Rider Experiments</h3>
+              <span class="badge">Synthetic data</span>
+            </div>
+            <p class="problem">Which product changes bring riders back.</p>
+            <ul class="features">
+              <li>A recovery campaign against a control group, with confidence intervals</li>
+              <li>An 8-week midday discount test</li>
+              <li>Acceptance of “no car available” alternatives</li>
+              <li>A 6-screen vs 4-screen onboarding funnel by weekly cohort</li>
+            </ul>
+            <p class="tags">
+              <span>SQL (Snowflake)</span><span>Python</span><span>A/B testing</span><span>self-contained HTML</span><span>SVG charts</span>
+            </p>
+            <p class="build-actions">
+              <a class="button" href="https://aiyulia.github.io/rider-experiments/dashboard.html" target="_blank" rel="noopener">Open the dashboard</a>
+              <a class="button ghost" href="https://github.com/AiYulia/rider-experiments" target="_blank" rel="noopener">GitHub</a>
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section id="experience" aria-labelledby="experience-heading">
+        <div class="section-head">
+          <h2 id="experience-heading">Experience</h2>
+        </div>
+
+        <ol class="timeline">
+          <li class="stop">
+            <div class="stop-meta">
+              <h3>MOIA</h3>
+              <p class="role-title">Product Manager I, Rider Experience · Contract, Remote</p>
+              <p class="when">Dec 2025 – Nov 2026</p>
+            </div>
+            <ul class="bullets">
+              <li>Tracked the rider journey from booking to repeat ride in QuickSight for a mobility-as-a-service app, adding a churn-risk model in Python that scored each rider's likelihood to leave from ride frequency, wait times, and unfilled requests; the scores pointed the team to unfilled requests as the single biggest retention leak</li>
+              <li>Built a churn-rate dashboard with Claude Code (HTML, SQL via MCP) that replaced six team spreadsheets with one source, giving each team its own view, such as churn by district or riders most likely to leave</li>
+              <li>Identified recently underserved riders (e.g., unfilled request, late pickup) via SQL for lifecycle marketing's recovery campaign, then set up automated apology emails with a ride credit within 24 hours; 18% of 48,000 targeted riders rebooked within 30 days versus 13% in the control group, about 2,400 additional riders rebooked</li>
+              <li>Worked on a redesign of the “no car available” screen to offer alternatives instead, using Claude Code with the Canva MCP server for quick concept mockups and the Figma MCP server to turn final frames into code-ready components; riders accepted an alternative on 28% of 50,000 unfilled requests</li>
+              <li>Ran an eight-week 20% midday discount test with marketing to free up rush-hour cars, using SQL to target riders whose trip history showed flexible schedules; midday rides rose 9% versus the control group and unfilled rush-hour requests fell 6%, leading marketing to roll the offer out citywide</li>
+              <li>Wrote a searchable data dictionary for 60+ rider tables, each with plain-language definitions, a dependency map, and a tested SQL query, organized by journey stage (booking, ride, repeat); the ready-made queries unified metrics across team dashboards, replacing ad-hoc code that had caused reporting errors</li>
+              <li>Simplified the first-ride onboarding flow in Figma from six screens to four by saving payment up front, and added a first-ride credit; after launch, the share of new users who completed a first ride within seven days rose from 38% to 46%, tracked step by step in SQL</li>
+            </ul>
+          </li>
+
+          <li class="stop">
+            <div class="stop-meta">
+              <h3>J.P. Morgan Private Bank</h3>
+              <p class="role-title">Global Private Bank Analyst, Asset &amp; Wealth Management</p>
+              <p class="when">Jul 2025 – Dec 2025</p>
+            </div>
+            <ul class="bullets">
+              <li>Cut proposal prep from 3 days to 2 with an Excel Monte Carlo template projecting each client's risk profile and exposure to market shocks; bankers used it to walk 35+ ultra-high-net-worth families through trade-offs</li>
+              <li>Analyzed held-away assets across 60 client families in Excel, comparing KYC-declared net worth with J.P. Morgan balances to rank the largest gaps; the list gave bankers their top 10 consolidation targets for the quarter</li>
+              <li>Prepared KYC files for 6 new global families, tracing source of wealth through holding companies and trusts across several countries; all 6 were onboarded, bringing in $400M in new assets</li>
+              <li>Answered clients' written questions during market swings, drafting talking points for bankers' calls using Bloomberg Terminal data (WIRP rate-cut odds, ECO calendar, GC yield curves) paired with J.P. Morgan's views</li>
+              <li>Helped investors with FX conversions and cross-border transfers, pulling live exchange rates and prepared trades with amount, currency pair, and settlement date; assisted on ~$50M in conversions across 12 families</li>
+              <li>Built a currency exposure report covering 20 families' holdings by currency, flagging large non-USD to hedge against dollar swings; investors used it to recommend forward hedges to 5 of them, covering about $120M</li>
+            </ul>
+          </li>
+
+          <li class="stop">
+            <div class="stop-meta">
+              <h3>J.P. Morgan Private Bank</h3>
+              <p class="role-title">Global Private Bank Summer Analyst, Asset &amp; Wealth Management</p>
+              <p class="when">May 2024 – Aug 2024</p>
+            </div>
+            <ul class="bullets">
+              <li>Co-built an AI prospect-research app with interns and analysts on the ChatGPT API: bankers enter a name and any known details, and it searches and scrapes Google, LinkedIn, Reddit, and social platforms into one profile; owned the API integration and source-verification layer keeping results accurate and cited, and the summer-long project won 1st of 12 eight-person teams, presented at the J.P. Morgan morning meeting</li>
+              <li>Built a branch-referral tracker in Python, Excel, and VBA for high-net-worth U.S. and international clients who walk into Chase branches in Austin, Miami, Nashville, Los Angeles, and Chicago, logging transfers by branch, outreach, and materials supplied; it connected Private Bank bankers with Chase regional directors for a smoother client journey, brought in 2 new clients during the internship, and stayed in use after it ended</li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+
+      <div class="pair">
+        <section id="education" class="panel" aria-labelledby="education-heading">
+          <h2 id="education-heading">Education</h2>
+          <p class="degree">BBA, Business Analytics (STEM), Minor in Finance</p>
+          <p class="school">Hofstra University · May 2025</p>
+          <ul class="honors">
+            <li>GPA 4.0 (major) / 3.98 (cumulative)</li>
+            <li>Honors College, Degree with Distinction</li>
+            <li>Presidential Scholarship</li>
+            <li>Best Paper, Journal of International Business &amp; Law, “Homes for Profit” on housing affordability (2025)</li>
+          </ul>
+          <figure class="pub pub-wide">
+            <button type="button" class="zoom" popovertarget="lb-diploma" aria-label="View the diploma larger">
+              <img src="/img/hofstra-diploma.jpg" width="1200" height="943" loading="lazy"
+                alt="Hofstra University diploma: Bachelor of Business Administration conferred on Yulia Erdyv, Summa Cum Laude, major in Business Analytics, University Honors College graduate with distinction, May 31, 2025" />
+            </button>
+            <figcaption>
+              <span class="pub-label">Diploma</span>
+              Bachelor of Business Administration, Summa Cum Laude, major in Business Analytics. University Honors College Graduate with Distinction. Hofstra University, May 31, 2025.
+            </figcaption>
+          </figure>
+          <figure class="pub pub-wide">
+            <div class="pub-stack">
+              <button type="button" class="zoom" popovertarget="lb-honors" aria-label="View the Honors College page larger">
+                <img src="/img/commencement-honors-college.jpg" width="1600" height="646" loading="lazy"
+                  alt="Hofstra commencement program, May 31, 2025: Rabinowitz Honors College Graduate with Distinction candidates, with Yulia Erdyv highlighted" />
+              </button>
+              <button type="button" class="zoom" popovertarget="lb-departmental" aria-label="View the Departmental Honors page larger">
+                <img src="/img/commencement-departmental-honors.jpg" width="1200" height="1468" loading="lazy"
+                  alt="Hofstra commencement program, May 31, 2025: Departmental Honors, Business Analytics, Yulia Erdyv, honors, highlighted" />
+              </button>
+            </div>
+            <figcaption>
+              <span class="pub-label">Commencement program</span>
+              Hofstra University, May 31, 2025, with my name highlighted: Rabinowitz Honors College Graduate with Distinction, and Departmental Honors in Business Analytics.
+            </figcaption>
+          </figure>
+        </section>
+
+        <section id="skills" class="panel" aria-labelledby="skills-heading">
+          <h2 id="skills-heading">Skills</h2>
+          <dl class="skills">
+            <dt>Product</dt>
+            <dd>A/B testing, funnel and retention analysis, churn modeling, segmentation, lifecycle campaigns, UX prototyping</dd>
+            <dt>Finance</dt>
+            <dd>Monte Carlo modeling, KYC and source-of-wealth due diligence, held-away asset analysis, FX hedging</dd>
+            <dt>Tools</dt>
+            <dd>SQL (Snowflake), Python (pandas, scikit-learn), Excel (advanced modeling, VBA), Airflow, QuickSight, Looker, Power BI, Jira, Figma, Canva, HTML dashboards, Bloomberg Terminal, Git/GitHub</dd>
+            <dt>AI</dt>
+            <dd>Claude Code, Codex, Claude and ChatGPT API integration, MCP, multi-agent orchestration, prompt engineering</dd>
+          </dl>
+        </section>
+      </div>
+    </main>
+
+    <div id="lb-diploma" class="lightbox" popover>
+      <button type="button" class="lb-close" popovertarget="lb-diploma" popovertargetaction="hide" aria-label="Close">×</button>
+      <button type="button" class="lb-fill" popovertarget="lb-diploma" popovertargetaction="hide" aria-label="Close">
+        <img src="/img/hofstra-diploma.jpg" alt="Hofstra University diploma, Bachelor of Business Administration, Summa Cum Laude, May 31, 2025" loading="lazy" />
+      </button>
+    </div>
+    <div id="lb-honors" class="lightbox" popover>
+      <button type="button" class="lb-close" popovertarget="lb-honors" popovertargetaction="hide" aria-label="Close">×</button>
+      <button type="button" class="lb-fill" popovertarget="lb-honors" popovertargetaction="hide" aria-label="Close">
+        <img src="/img/commencement-honors-college.jpg" alt="Commencement program: Rabinowitz Honors College Graduate with Distinction candidates, Yulia Erdyv highlighted" loading="lazy" />
+      </button>
+    </div>
+    <div id="lb-departmental" class="lightbox" popover>
+      <button type="button" class="lb-close" popovertarget="lb-departmental" popovertargetaction="hide" aria-label="Close">×</button>
+      <button type="button" class="lb-fill" popovertarget="lb-departmental" popovertargetaction="hide" aria-label="Close">
+        <img src="/img/commencement-departmental-honors.jpg" alt="Commencement program: Departmental Honors, Business Analytics, Yulia Erdyv highlighted" loading="lazy" />
+      </button>
+    </div>
+    <div id="lb-jibl" class="lightbox" popover>
+      <button type="button" class="lb-close" popovertarget="lb-jibl" popovertargetaction="hide" aria-label="Close">×</button>
+      <button type="button" class="lb-fill" popovertarget="lb-jibl" popovertargetaction="hide" aria-label="Close">
+        <img src="/img/jibl-spring-2025.jpg" alt="Journal of International Business and Law, Spring 2025 cover" loading="lazy" />
+      </button>
+    </div>
+    <div id="lb-letter" class="lightbox" popover>
+      <button type="button" class="lb-close" popovertarget="lb-letter" popovertargetaction="hide" aria-label="Close">×</button>
+      <button type="button" class="lb-fill" popovertarget="lb-letter" popovertargetaction="hide" aria-label="Close">
+        <img src="/img/jibl-best-paper-letter.jpg" alt="Best Paper award letter, Journal of International Business and Law, Spring 2025" loading="lazy" />
+      </button>
+    </div>
+
+    <footer class="contact" id="contact">
+      <div class="wrap contact-inner">
+        <a href="mailto:erdyv.yuliia@gmail.com">erdyv.yuliia@gmail.com</a>
+        <a href="https://www.linkedin.com/in/erdyv-yuliia">LinkedIn</a>
+        <a href="https://github.com/AiYulia">GitHub</a>
+        <a href="/resume.pdf">Resume</a>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  :root {
+    --bg: #f5f6f8;
+    --surface: #ffffff;
+    --ink: #101826;
+    --muted: #586174;
+    --rule: #dfe3ea;
+    --accent: #0b7a83;
+    --accent-ink: #08646c;
+    --signal: #d98a1c;
+    --on-accent: #ffffff;
+    --accent-soft: rgba(11, 122, 131, 0.12);
+    --signal-soft: rgba(217, 138, 28, 0.16);
+    color-scheme: light dark;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0c121c;
+      --surface: #141c28;
+      --ink: #e9edf3;
+      --muted: #9aa4b4;
+      --rule: #253042;
+      --accent: #38b2bb;
+      --accent-ink: #5cc6ce;
+      --signal: #f0ad45;
+      --on-accent: #0c121c;
+      --accent-soft: rgba(56, 178, 187, 0.14);
+      --signal-soft: rgba(240, 173, 69, 0.16);
+    }
+  }
+
+  * {
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    background: var(--bg);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "Inter Variable", -apple-system, "Segoe UI", Helvetica, Arial,
+      sans-serif;
+    font-feature-settings: "cv11", "ss01";
+    font-size: 1.0625rem;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-wrap: break-word;
+  }
+
+  a {
+    color: var(--accent-ink);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  .wrap {
+    max-width: 76rem;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  section[id] {
+    scroll-margin-top: 2rem;
+  }
+
+  /* Top bar */
+
+  .topbar {
+    border-bottom: 1px solid var(--rule);
+    background: var(--surface);
+  }
+
+  .topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--ink);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .brand::before {
+    content: "";
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+  }
+
+  .brand:hover {
+    text-decoration: none;
+    color: var(--accent-ink);
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.75rem;
+    font-size: 0.94rem;
+    font-weight: 550;
+  }
+
+  nav a {
+    color: var(--muted);
+  }
+
+  nav a:hover {
+    color: var(--accent-ink);
+  }
+
+  /* Main */
+
+  main {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    animation: fade-in 0.6s ease-out both;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* Hero */
+
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 3rem 4rem;
+    margin-bottom: 6.5rem;
+  }
+
+  .kicker {
+    font-size: 0.82rem;
+    font-weight: 650;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: clamp(2.75rem, 6.4vw, 4.75rem);
+    font-weight: 750;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .tagline {
+    font-size: clamp(1.18rem, 2.2vw, 1.45rem);
+    font-weight: 450;
+    letter-spacing: -0.012em;
+    line-height: 1.5;
+    max-width: 44rem;
+  }
+
+  .portrait {
+    width: 17rem;
+    height: 17rem;
+    object-fit: cover;
+    border-radius: 28px;
+    border: 1px solid var(--rule);
+    box-shadow: 14px 14px 0 var(--accent-soft);
+  }
+
+  /* Booking, Ride, Repeat stop strip */
+
+  .journey {
+    list-style: none;
+    padding: 0;
+    margin: 2.25rem 0 0;
+    display: flex;
+    max-width: 23rem;
+  }
+
+  .journey li {
+    position: relative;
+    flex: 1;
+    padding-top: 1.55rem;
+    font-size: 0.76rem;
+    font-weight: 650;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .journey li:last-child {
+    flex: 0 0 auto;
+  }
+
+  .journey li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 4px solid var(--accent);
+    z-index: 1;
+  }
+
+  .journey li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 18px;
+    right: 0;
+    height: 4px;
+    background: var(--accent);
+  }
+
+  .journey li:last-child::before {
+    border-color: var(--signal);
+    background: var(--signal);
+  }
+
+  .hero-actions {
+    margin-top: 2.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+  }
+
+  .button {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--on-accent);
+    font-weight: 600;
+    font-size: 0.94rem;
+    line-height: 1.3;
+    padding: 0.62rem 1.2rem;
+    border-radius: 999px;
+    border: 1px solid var(--accent);
+    transition: background-color 0.15s ease, border-color 0.15s ease,
+      color 0.15s ease;
+  }
+
+  .button:hover {
+    text-decoration: none;
+    background: var(--accent-ink);
+    border-color: var(--accent-ink);
+  }
+
+  .button.ghost {
+    background: var(--surface);
+    color: var(--ink);
+    border-color: var(--rule);
+  }
+
+  .button.ghost:hover {
+    color: var(--accent-ink);
+    border-color: var(--accent);
+  }
+
+  /* Sections */
+
+  section {
+    margin-bottom: 6rem;
+  }
+
+  .section-head {
+    display: grid;
+    grid-template-columns: 16rem minmax(0, 1fr);
+    align-items: baseline;
+    gap: 0.75rem 4rem;
+    margin-bottom: 2.25rem;
+  }
+
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+  }
+
+  h2::before {
+    content: "";
+    flex: none;
+    width: 0.85rem;
+    height: 0.85rem;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+  }
+
+  .section-note {
+    color: var(--muted);
+    max-width: 46rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+    font-weight: 650;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+  }
+
+  /* Work cards: screenshot and text side by side on desktop */
+
+  .build {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    gap: 2.5rem;
+    align-items: start;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 20px;
+    padding: 1.5rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .shot {
+    display: block;
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  .shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .build-body {
+    padding: 0.5rem 0.5rem 0.25rem 0;
+  }
+
+  .build-head {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.8rem;
+    margin-bottom: 0.45rem;
+  }
+
+  .build-head h3 {
+    font-size: 1.55rem;
+    letter-spacing: -0.025em;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.72rem;
+    font-weight: 650;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: var(--signal-soft);
+    padding: 0.18rem 0.65rem;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  .badge::before {
+    content: "";
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    background: var(--signal);
+  }
+
+  .problem {
+    font-weight: 550;
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+  }
+
+  .features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.25rem;
+    color: var(--muted);
+    font-size: 0.97rem;
+  }
+
+  .features li {
+    position: relative;
+    padding-left: 1.4rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .features li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .tags span {
+    font-size: 0.78rem;
+    font-weight: 550;
+    color: var(--accent-ink);
+    background: var(--accent-soft);
+    border-radius: 6px;
+    padding: 0.12rem 0.55rem;
+    white-space: nowrap;
+  }
+
+  .build-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .build-actions .button {
+    font-size: 0.9rem;
+    padding: 0.5rem 1.05rem;
+  }
+
+  /* Experience: a route line with one stop per role */
+
+  .timeline {
+    --meta: 16rem;
+    --gap: 4rem;
+    --line-x: calc(var(--meta) + var(--gap) / 2);
+    list-style: none;
+    padding: 0;
+  }
+
+  .stop {
+    position: relative;
+    display: grid;
+    grid-template-columns: var(--meta) minmax(0, 1fr);
+    column-gap: var(--gap);
+    padding-bottom: 3.25rem;
+  }
+
+  .stop:last-child {
+    padding-bottom: 0;
+  }
+
+  .stop::before {
+    content: "";
+    position: absolute;
+    left: calc(var(--line-x) - 2px);
+    top: 0.8rem;
+    bottom: -0.8rem;
+    width: 4px;
+    background: var(--accent);
+  }
+
+  .stop:last-child::before {
+    display: none;
+  }
+
+  .stop::after {
+    content: "";
+    position: absolute;
+    left: calc(var(--line-x) - 9px);
+    top: calc(0.8rem - 9px);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 4px solid var(--accent);
+  }
+
+  .stop h3 {
+    margin-bottom: 0.3rem;
+  }
+
+  .role-title {
+    color: var(--accent-ink);
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.45;
+    margin-bottom: 0.4rem;
+  }
+
+  .when {
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .bullets {
+    padding-left: 1.1rem;
+    color: var(--muted);
+    font-size: 0.98rem;
+    max-width: 50rem;
+  }
+
+  .bullets li {
+    margin-bottom: 0.55rem;
+    padding-left: 0.2rem;
+  }
+
+  .bullets li::marker {
+    color: var(--accent);
+  }
+
+  /* Education and skills */
+
+  .pair {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+    gap: 1.75rem;
+    align-items: start;
+  }
+
+  .panel {
+    margin-bottom: 0;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 20px;
+    padding: 2rem;
+  }
+
+  .panel h2 {
+    font-size: 1.45rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .degree {
+    font-weight: 650;
+    font-size: 1.08rem;
+    line-height: 1.4;
+  }
+
+  .school {
+    color: var(--accent-ink);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin: 0.3rem 0 1rem;
+  }
+
+  .honors {
+    padding-left: 1.1rem;
+    color: var(--muted);
+    font-size: 0.96rem;
+  }
+
+  .honors li {
+    margin-bottom: 0.35rem;
+  }
+
+  .pub {
+    display: grid;
+    grid-template-columns: 104px minmax(0, 1fr);
+    gap: 1.1rem;
+    align-items: start;
+    margin: 1.5rem 0 0;
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .pub img {
+    display: block;
+    width: 104px;
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid var(--rule);
+  }
+
+  .pub-wide {
+    grid-template-columns: 150px minmax(0, 1fr);
+  }
+
+  .pub-wide img {
+    width: 150px;
+  }
+
+  .pub-stack {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  /* Click-to-enlarge images: native popover, no JS; Esc or a click anywhere closes */
+
+  .zoom {
+    display: block;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: zoom-in;
+    border-radius: 6px;
+  }
+
+  .zoom:focus-visible,
+  .lb-close:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: rgba(8, 12, 20, 0.88);
+    color: #fff;
+  }
+
+  .lightbox::backdrop {
+    background: transparent;
+  }
+
+  .lb-fill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 4vh 4vw;
+    border: 0;
+    background: none;
+    cursor: zoom-out;
+  }
+
+  .lb-fill img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.45);
+  }
+
+  .lb-close {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 1;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.16);
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .lb-close:hover {
+    background: rgba(255, 255, 255, 0.28);
+  }
+
+  body:has(.lightbox:popover-open) {
+    overflow: hidden;
+  }
+
+  /* Publication */
+
+  .paper {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 2.25rem;
+    align-items: start;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 20px;
+    padding: 2rem;
+  }
+
+  .paper-cover img {
+    display: block;
+    width: 220px;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid var(--rule);
+  }
+
+  .paper-venue {
+    color: var(--accent-ink);
+    font-weight: 600;
+    font-size: 0.92rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .paper h3 {
+    font-size: 1.4rem;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.7rem;
+  }
+
+  .paper-meta {
+    color: var(--muted);
+    font-size: 0.96rem;
+    margin-bottom: 1.1rem;
+  }
+
+  .paper-award {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--muted);
+    font-size: 0.96rem;
+  }
+
+  .paper-doc {
+    display: grid;
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: 1rem;
+    align-items: start;
+    margin-top: 1.4rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--rule);
+    color: var(--muted);
+    font-size: 0.94rem;
+  }
+
+  .paper-doc img {
+    display: block;
+    width: 96px;
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid var(--rule);
+  }
+
+  .pub figcaption {
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .pub-label {
+    display: block;
+    color: var(--ink);
+    font-weight: 650;
+    margin-bottom: 0.25rem;
+  }
+
+  .honors li::marker {
+    color: var(--accent);
+  }
+
+  .skills {
+    display: grid;
+    grid-template-columns: 10rem minmax(0, 1fr);
+    gap: 0.9rem 1.5rem;
+    font-size: 0.96rem;
+  }
+
+  .skills dt {
+    font-weight: 650;
+  }
+
+  .skills dd {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  /* Footer */
+
+  .contact {
+    border-top: 1px solid var(--rule);
+    background: var(--surface);
+  }
+
+  .contact-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2.5rem;
+    font-weight: 550;
+  }
+
+  /* Tablet and phone */
+
+  @media (max-width: 900px) {
+    .hero {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0;
+    }
+    .portrait {
+      grid-row: 1;
+      width: 7.5rem;
+      height: 7.5rem;
+      border-radius: 20px;
+      box-shadow: 8px 8px 0 var(--accent-soft);
+      margin-bottom: 1.75rem;
+    }
+    .build {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1.5rem;
+    }
+    .build-body {
+      padding: 0 0.25rem 0.25rem;
+    }
+    .section-head {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .pair {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .timeline {
+      --meta: 13rem;
+      --gap: 3rem;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .timeline {
+      --line-x: 9px;
+    }
+    .stop {
+      display: block;
+      padding-left: 2.25rem;
+    }
+    .stop-meta {
+      margin-bottom: 0.9rem;
+    }
+  }
+
+  @media (max-width: 560px) {
+    body {
+      font-size: 1rem;
+    }
+    .wrap {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+    main {
+      padding-top: 3rem;
+      padding-bottom: 3.5rem;
+    }
+    .hero {
+      margin-bottom: 4.5rem;
+    }
+    section {
+      margin-bottom: 4.5rem;
+    }
+    nav {
+      gap: 0.4rem 1.1rem;
+      font-size: 0.9rem;
+    }
+    .build {
+      padding: 0.85rem;
+      border-radius: 16px;
+    }
+    .build-head h3 {
+      font-size: 1.35rem;
+    }
+    .panel {
+      padding: 1.4rem 1.25rem;
+      border-radius: 16px;
+    }
+    .skills {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0.15rem;
+    }
+    .skills dd {
+      margin-bottom: 0.8rem;
+    }
+    .paper {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1.25rem;
+      padding: 1.25rem;
+      border-radius: 16px;
+    }
+    .paper-cover img {
+      width: 150px;
+    }
+    .paper h3 {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    main {
+      animation: none;
+    }
+    html {
+      scroll-behavior: auto;
+    }
+    .button {
+      transition: none;
+    }
+  }
+</style>
